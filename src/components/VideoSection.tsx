@@ -45,13 +45,15 @@ const VideoSection = () => {
           >
             <Card className="hover-lift overflow-hidden">
               <CardContent className="p-0">
-                <div className="aspect-video">
+                <div className="relative aspect-video bg-black">
                   <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
                     title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    className="w-full h-full"
+                    loading="lazy"
+                    className="w-full h-full border-0"
+                    style={{ pointerEvents: 'auto' }}
                   />
                 </div>
                 <div className="p-4">
