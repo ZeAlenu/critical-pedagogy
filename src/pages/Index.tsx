@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX, UsersX } from "lucide-react";
+import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 
@@ -144,7 +143,7 @@ const Index = () => {
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="bg-orange-100 p-3 rounded-full flex-shrink-0">
-                        <UsersX className="w-8 h-8 text-orange-600" />
+                        <Users className="w-8 h-8 text-orange-600" />
                       </div>
                       <div>
                         <div className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
