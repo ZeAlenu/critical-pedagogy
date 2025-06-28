@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Phone, Play, Users, Target, Megaphone } from "lucide-react";
+import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 
@@ -58,10 +58,10 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
-              הקמפיין שלנו
+              פדגוגיה ביקורתית רעילה
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              הצטרפו לקמפיין שמשנה את הפנים של הפוליטיקה הישראלית. יחד נבנה עתיד טוב יותר לכולנו
+              חושפים את מהלכי הניתוק המסוכנים במערכת החינוך. יחד נגן על זהותם הציונית של ילדינו
             </p>
           </motion.div>
 
@@ -74,23 +74,23 @@ const Index = () => {
           >
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <Users className="w-12 h-12 mx-auto mb-4 text-campaign-blue" />
-                <h3 className="text-2xl font-bold mb-2">50,000+</h3>
-                <p className="text-gray-600">תומכים פעילים</p>
+                <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-campaign-blue" />
+                <h3 className="text-2xl font-bold mb-2">4 שלבים</h3>
+                <p className="text-gray-600">של ניתוק מסוכן</p>
               </CardContent>
             </Card>
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <Target className="w-12 h-12 mx-auto mb-4 text-campaign-purple" />
-                <h3 className="text-2xl font-bold mb-2">120</h3>
-                <p className="text-gray-600">ערים ויישובים</p>
+                <Shield className="w-12 h-12 mx-auto mb-4 text-campaign-purple" />
+                <h3 className="text-2xl font-bold mb-2">מרחב בטוח</h3>
+                <p className="text-gray-600">שהפך למרחב מנתק</p>
               </CardContent>
             </Card>
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <Megaphone className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
-                <h3 className="text-2xl font-bold mb-2">15</h3>
-                <p className="text-gray-600">שנות ניסיון</p>
+                <BookOpen className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
+                <h3 className="text-2xl font-bold mb-2">חינוך ציוני</h3>
+                <p className="text-gray-600">ערכים שחייבים לשמר</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -108,9 +108,9 @@ const Index = () => {
             <Card className="hover-lift glass-effect">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold mb-4">הצטרפו אלינו עוד היום</h2>
+                  <h2 className="text-3xl font-bold mb-4">הצטרפו למאבק חשוב</h2>
                   <p className="text-gray-600 text-lg">
-                    השאירו את הפרטים שלכם ותקבלו עדכונים על הקמפיין ודרכים להשפיע
+                    השאירו את הפרטים שלכם וקחו חלק בהגנה על זהותם הציונית של ילדינו
                   </p>
                 </div>
                 
@@ -146,12 +146,12 @@ const Index = () => {
                     disabled={isSubmitting}
                     className="w-full h-14 text-lg font-semibold gradient-bg hover:opacity-90 transition-opacity animate-pulse-glow"
                   >
-                    {isSubmitting ? "נרשם..." : "הצטרף לקמפיין"}
+                    {isSubmitting ? "נרשם..." : "הצטרף למאבק"}
                   </Button>
                 </form>
                 
                 <p className="text-sm text-gray-500 text-center mt-4">
-                  בלחיצה על "הצטרף לקמפיין" אתם מסכימים לקבל עדכונים מהקמפיין
+                  בלחיצה על "הצטרף למאבק" אתם מסכימים לקבל עדכונים וחומרי הסברה
                 </p>
               </CardContent>
             </Card>

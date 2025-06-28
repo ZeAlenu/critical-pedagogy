@@ -7,18 +7,18 @@ const VideoSection = () => {
   const videos = [
     {
       id: "dQw4w9WgXcQ", // Sample YouTube video ID
-      title: "החזון שלנו לעתיד",
-      description: "מה אנחנו רוצים להשיג ואיך נגיע לשם יחד"
+      title: "מהי פדגוגיה ביקורתית?",
+      description: "הסבר מפורט על הטכניקות המסוכנות במערכת החינוך"
     },
     {
       id: "3JZ_D3ELwOQ", // Another sample video ID
-      title: "הישגים מהעבר",
-      description: "מבט על מה שכבר השגנו ומה שעוד מצפה לנו"
+      title: "מהלכי הניתוק בכיתה",
+      description: "איך תלמידים מנותקים מזהותם הציונית ומהוריהם"
     },
     {
       id: "kJQP7kiw5Fk", // Another sample video ID
-      title: "קריאה לפעולה",
-      description: "איך כל אחד מכם יכול לקחת חלק בשינוי"
+      title: "איך להגן על ילדינו",
+      description: "כלים מעשיים להורים ומחנכים למאבק חשוב זה"
     }
   ];
 
@@ -37,7 +37,7 @@ const VideoSection = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">הסיפור שלנו בווידאו</h2>
         <p className="text-xl text-gray-600">
-          צפו בסרטונים שמספרים את הסיפור שלנו ומציגים את החזון שלנו לעתיד
+          צפו בסרטונים שחושפים את האמת על הפדגוגיה הביקורתית הרעילה
         </p>
       </div>
       
