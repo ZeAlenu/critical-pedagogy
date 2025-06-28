@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const VideoSection = () => {
@@ -22,11 +21,6 @@ const VideoSection = () => {
     }
   ];
 
-  const handleVideoClick = (videoId: string) => {
-    const url = `https://www.youtube.com/watch?v=${videoId}`;
-    window.open(url, '_blank');
-  };
-
   return (
     <motion.div 
       initial={{ opacity: 0, y: 30 }}
@@ -41,7 +35,7 @@ const VideoSection = () => {
         </p>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {videos.map((video, index) => (
           <motion.div
             key={video.id}
@@ -49,21 +43,20 @@ const VideoSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 * index }}
           >
-            <Card className="hover-lift cursor-pointer group overflow-hidden">
+            <Card className="hover-lift overflow-hidden">
               <CardContent className="p-0">
-                <div 
-                  className="relative aspect-video bg-gradient-to-br from-campaign-blue to-campaign-purple"
-                  onClick={() => handleVideoClick(video.id)}
-                >
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-4 group-hover:bg-white group-hover:scale-110 transition-all">
-                      <Play className="w-8 h-8 text-campaign-blue mr-1" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">{video.title}</h3>
-                    <p className="text-white/90 text-sm">{video.description}</p>
-                  </div>
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg mb-2 line-clamp-2">{video.title}</h3>
+                  <p className="text-gray-600 text-sm line-clamp-3">{video.description}</p>
                 </div>
               </CardContent>
             </Card>
