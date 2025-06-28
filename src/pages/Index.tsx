@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -123,7 +124,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          מהלך 1
+                          זהות לאומית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מהזהות הציונית</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -148,7 +149,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          מהלך 2
+                          זהות משפחתית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -173,7 +174,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          מהלך 3
+                          שכל ישר
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק משיח רציונלי</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -198,7 +199,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          מהלך 4
+                          חינוך מחדש
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק התלמיד "המפריע"</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -280,3 +281,4 @@ const Index = () => {
 };
 
 export default Index;
+
