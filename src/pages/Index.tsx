@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -74,7 +75,7 @@ const Index = () => {
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
                 <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-campaign-blue" />
-                <h3 className="text-2xl font-bold mb-2">4 שלבים</h3>
+                <h3 className="text-2xl font-bold mb-2">4 מהלכים</h3>
                 <p className="text-gray-600">של ניתוק מסוכן</p>
               </CardContent>
             </Card>
@@ -102,7 +103,7 @@ const Index = () => {
             className="mb-16"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">ארבעת שלבי הניתוק</h2>
+              <h2 className="text-4xl font-bold mb-4">ארבעת מהלכי הניתוק</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 כך פועלים מורים רדיקלים ב"מרחב הבטוח" שלהם - מרחב מנתק שמפרק את זהותם הציונית של ילדינו
               </p>
@@ -122,7 +123,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          שלב 1
+                          מהלך 1
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מהזהות הציונית</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -147,7 +148,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          שלב 2
+                          מהלך 2
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -172,7 +173,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          שלב 3
+                          מהלך 3
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק משיח רציונלי</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -197,7 +198,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
-                          שלב 4
+                          מהלך 4
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק התלמיד "המפריע"</h3>
                         <p className="text-gray-600 leading-relaxed">
