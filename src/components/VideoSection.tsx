@@ -6,17 +6,17 @@ import { motion } from "framer-motion";
 const VideoSection = () => {
   const videos = [
     {
-      id: "dQw4w9WgXcQ", // Sample YouTube video ID
-      title: "מהי פדגוגיה ביקורתית?",
-      description: "הסבר מפורט על הטכניקות המסוכנות במערכת החינוך"
+      id: "ecEC6B3GF-U",
+      title: '"עושים לנו שטיפת מוח!" | עדות מטלטלת מתוך מערכת החינוך',
+      description: "עדות מטלטלת של תלמיד על השטחת דמות הפלסטיני ונקיטת עמדה אנטי-ציונית במערכת החינוך"
     },
     {
-      id: "3JZ_D3ELwOQ", // Another sample video ID
-      title: "מהלכי הניתוק בכיתה",
-      description: "איך תלמידים מנותקים מזהותם הציונית ומהוריהם"
+      id: "XL4ze_0vAWI",
+      title: "כיצד גורמים רדיקלים מונעים לימוד תנ\"ך בבתי הספר",
+      description: "חשיפת מהלכי מניעת לימוד תנ\"ך ועקירת הזהות היהודית-ציונית"
     },
     {
-      id: "kJQP7kiw5Fk", // Another sample video ID
+      id: "kJQP7kiw5Fk",
       title: "איך להגן על ילדינו",
       description: "כלים מעשיים להורים ומחנכים למאבק חשוב זה"
     }
