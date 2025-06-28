@@ -135,10 +135,10 @@ const Campaign = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6 select-text">
             מרכז המיילים שלנו
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto select-text">
             בחרו מהתבניות שלמטה, העתיקו למייל שלכם ושלחו לחברים ולמשפחה
           </p>
         </motion.div>
@@ -155,17 +155,17 @@ const Campaign = () => {
                 selectedTemplate === template.id ? 'ring-2 ring-campaign-blue shadow-lg' : ''
               }`}>
                 <CardHeader className="bg-gradient-to-r from-campaign-blue/10 to-campaign-purple/10">
-                  <CardTitle className="text-2xl flex items-center gap-3">
+                  <CardTitle className="text-2xl flex items-center gap-3 select-text">
                     <Mail className="h-6 w-6 text-campaign-blue" />
                     {template.title}
                   </CardTitle>
-                  <p className="text-sm text-gray-600 font-medium">
+                  <p className="text-sm text-gray-600 font-medium select-text">
                     נושא: {template.subject}
                   </p>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="bg-gray-50 p-4 rounded-lg mb-6 text-right">
-                    <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed">
+                    <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed select-text">
                       {template.content}
                     </pre>
                   </div>
@@ -203,8 +203,8 @@ const Campaign = () => {
         >
           <Card className="max-w-2xl mx-auto glass-effect">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">מוכנים לשלוח?</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold mb-4 select-text">מוכנים לשלוח?</h3>
+              <p className="text-gray-600 mb-6 select-text">
                 לאחר שהעתקתם את התבנית, פתחו את Gmail ושלחו את המייל לרשימת הקשרים שלכם
               </p>
               <Button 
