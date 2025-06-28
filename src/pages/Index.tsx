@@ -62,7 +62,7 @@ const Index = () => {
               פדגוגיה ביקורתית רעילה
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              חושפים את מהלכי הניתוק המסוכנים במערכת החינוך. יחד נגן על זהותם הציונית של ילדינו
+              🇮🇱 חושפים את מהלכי הניתוק המסוכנים במערכת החינוך. יחד נגן על זהותם הציונית של ילדינו
             </p>
           </motion.div>
 
