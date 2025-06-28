@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle } from "lucide-react";
+import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX, UsersX } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 
@@ -93,6 +93,123 @@ const Index = () => {
                 <p className="text-gray-600">ערכים שחייבים לשמר</p>
               </CardContent>
             </Card>
+          </motion.div>
+
+          {/* 4 Steps Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">ארבעת שלבי הניתוק</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                כך פועלים מורים רדיקלים ב"מרחב הבטוח" שלהם - מרחב מנתק שמפרק את זהותם הציונית של ילדינו
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Card className="hover-lift h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-red-100 p-3 rounded-full flex-shrink-0">
+                        <UserX className="w-8 h-8 text-red-600" />
+                      </div>
+                      <div>
+                        <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                          שלב 1
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">ניתוק מהזהות הציונית</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          השטחת דמות הפלסטיני לכדי תפקיד קורבן מוחלט, כך שהיהודי נכנס לתפקיד "המדכא". זה מערער את הזהות הציונית הבסיסית של התלמיד.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Card className="hover-lift h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-orange-100 p-3 rounded-full flex-shrink-0">
+                        <UsersX className="w-8 h-8 text-orange-600" />
+                      </div>
+                      <div>
+                        <div className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                          שלב 2
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          ההורים מוצגים כ"לא רלוונטיים" כי הם "לא עברו תהליך" של ערעור הזהות הציונית. כך נוצר קרע בין התלמיד למשפחתו.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Card className="hover-lift h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-purple-100 p-3 rounded-full flex-shrink-0">
+                        <Brain className="w-8 h-8 text-purple-600" />
+                      </div>
+                      <div>
+                        <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                          שלב 3
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">ניתוק משיח רציונלי</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          העברת המסר באופן מובלע שמפעיל רגש ומעצב תודעה תוך עקיפת השיח הרציונלי. כך בלתי אפשרי לטעון נגד הטענה שהוחדרה במהלך מניפולטיבי.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <Card className="hover-lift h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-blue-100 p-3 rounded-full flex-shrink-0">
+                        <MessageSquareX className="w-8 h-8 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                          שלב 4
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">ניתוק התלמיד "המפריע"</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          שיימינג פומבי של תלמיד ששואל שאלות רציונליות. התלמיד מואשם ב"עשיית חקירה" ומוקע בפני חבריו כדי למנוע שיח פתוח וביקורתי.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Video Section */}
