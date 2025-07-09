@@ -30,20 +30,45 @@ const Index = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call to store user data
-    setTimeout(() => {
-      // Store in localStorage for now (would be database in real app)
-      localStorage.setItem('userEmail', email);
-      localStorage.setItem('userPhone', phone);
-      
-      toast({
-        title: "הרשמה בוצעה בהצלחה!",
-        description: "עכשיו תוכל לבחור תבניות מייל לקמפיין",
+    try {
+      // Send data to Google Sheets via Apps Script
+      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          phone: phone,
+          timestamp: new Date().toISOString(),
+          source: 'פדגוגיה ביקורתית רעילה'
+        }),
       });
-      
+
+      if (response.ok) {
+        // Store in localStorage for navigation
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPhone', phone);
+        
+        toast({
+          title: "הרשמה בוצעה בהצלחה!",
+          description: "הפרטים נשלחו בהצלחה. עכשיו תוכל לבחור תבניות מייל לקמפיין",
+        });
+        
+        navigate('/campaign');
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "שגיאה בשליחה",
+        description: "אנא נסה שוב או צור קשר עימנו",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-      navigate('/campaign');
-    }, 1000);
+    }
   };
 
   return (
