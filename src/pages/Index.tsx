@@ -9,12 +9,58 @@ import { toast } from "@/hooks/use-toast";
 import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
+import { parsePhoneNumber } from "libphonenumber-js";
 
 const Index = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+
+  // Email validation function
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Phone validation using libphonenumber-js
+  const validatePhone = (phone: string): boolean => {
+    try {
+      const phoneNumber = parsePhoneNumber(phone);
+      return phoneNumber && phoneNumber.isValid();
+    } catch {
+      return false;
+    }
+  };
+
+  // Check if email is from a disposable domain
+  const checkDisposableEmail = async (email: string): Promise<boolean> => {
+    try {
+      const domain = email.split('@')[1]?.toLowerCase();
+      if (!domain) return false;
+
+      // Fetch disposable domains
+      const [domainsResponse, wildcardsResponse] = await Promise.all([
+        fetch('https://unpkg.com/disposable-email-domains@1.0.62/index.json'),
+        fetch('https://unpkg.com/disposable-email-domains@1.0.62/wildcard.json')
+      ]);
+
+      const domains = await domainsResponse.json();
+      const wildcards = await wildcardsResponse.json();
+
+      if (domains.includes(domain)) return true;
+
+      for (let wildcard of wildcards) {
+        const suffix = wildcard.slice(1);
+        if (domain.endsWith(suffix)) return true;
+      }
+
+      return false;
+    } catch (error) {
+      console.error('Error checking disposable email:', error);
+      return false;
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +69,37 @@ const Index = () => {
       toast({
         title: "שגיאה",
         description: "אנא מלא את כל השדות הנדרשים",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate email format
+    if (!validateEmail(email)) {
+      toast({
+        title: "שגיאה",
+        description: "כתובת המייל אינה תקינה",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate phone number
+    if (!validatePhone(phone)) {
+      toast({
+        title: "שגיאה", 
+        description: "מספר הטלפון אינו תקין",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Check for disposable email
+    const isDisposable = await checkDisposableEmail(email);
+    if (isDisposable) {
+      toast({
+        title: "שגיאה",
+        description: "לא ניתן להשתמש בכתובת מייל זמנית",
         variant: "destructive",
       });
       return;
