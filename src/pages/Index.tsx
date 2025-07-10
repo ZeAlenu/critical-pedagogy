@@ -32,10 +32,10 @@ const Index = () => {
     
     try {
       // Send data to Google Sheets via Apps Script
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxDCS7kMU0Gt0YiTbpUeyLxGhPf7VAcrZhVPjgSl4PblGTMkDf7cQhf9WyJAqkB4MNleg/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbw3zwjybrzhipA4YuKP336bOGWPjD2VlXhuV8lizy84XEmYioIk5ffhfVkzPqTsJ0YigA/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         body: JSON.stringify({
           email: email,
