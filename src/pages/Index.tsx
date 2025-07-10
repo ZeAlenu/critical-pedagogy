@@ -32,7 +32,7 @@ const Index = () => {
     
     try {
       // Send data to Google Sheets via Apps Script
-      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxDCS7kMU0Gt0YiTbpUeyLxGhPf7VAcrZhVPjgSl4PblGTMkDf7cQhf9WyJAqkB4MNleg/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
