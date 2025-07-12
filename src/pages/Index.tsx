@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX } from "lucide-react";
@@ -337,26 +338,37 @@ const Index = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6" dir="ltr">
                   <div className="space-y-4">
-                     <div className="relative">
-                       <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                       <Input
-                         type="email"
-                         placeholder="כתובת מייל"
-                         value={email}
-                         onChange={(e) => setEmail(e.target.value)}
-                         className="pl-10 h-12 text-lg text-left"
-                         required
-                         dir="ltr"
-                       />
+                     <div className="space-y-2">
+                       <Label htmlFor="email" className="text-right text-sm font-medium">
+                         כתובת מייל *
+                       </Label>
+                       <div className="relative">
+                         <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                         <Input
+                           id="email"
+                           type="email"
+                           placeholder="הזן כתובת מייל"
+                           value={email}
+                           onChange={(e) => setEmail(e.target.value)}
+                           className="pl-10 h-12 text-lg text-left"
+                           required
+                           dir="ltr"
+                         />
+                       </div>
                      </div>
                      
-                     <div className="relative">
-                       <PhoneInput
-                         value={phone}
-                         onChange={(value) => setPhone(value || "")}
-                         placeholder="מספר טלפון"
-                         className="h-12 text-lg text-left"
-                       />
+                     <div className="space-y-2">
+                       <Label htmlFor="phone" className="text-right text-sm font-medium">
+                         מספר טלפון *
+                       </Label>
+                       <div className="relative">
+                         <PhoneInput
+                           value={phone}
+                           onChange={(value) => setPhone(value || "")}
+                           placeholder="הזן מספר טלפון"
+                           className="h-12 text-lg text-left"
+                         />
+                       </div>
                      </div>
                   </div>
                   
