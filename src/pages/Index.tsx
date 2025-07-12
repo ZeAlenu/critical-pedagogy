@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTriangle, UserX, Brain, MessageSquareX } from "lucide-react";
+import { Mail, Phone, Play, Users, Target, Megaphone, Shield, Star, AlertTriangle, UserX, Brain, MessageSquareX } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 import { parsePhoneNumber } from "libphonenumber-js";
@@ -181,7 +181,7 @@ const Index = () => {
             </Card>
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <BookOpen className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
+                <Star className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
                 <h3 className="text-2xl font-bold mb-2">חינוך ציוני</h3>
                 <p className="text-gray-600">ערכים שחייבים לשמר</p>
               </CardContent>
