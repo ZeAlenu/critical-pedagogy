@@ -174,14 +174,14 @@ const Index = () => {
             </Card>
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <Shield className="w-12 h-12 mx-auto mb-4 text-campaign-purple" />
+                <ShieldX className="w-12 h-12 mx-auto mb-4 text-campaign-purple" />
                 <h3 className="text-2xl font-bold mb-2">מרחב בטוח</h3>
                 <p className="text-gray-600">שהפך למרחב מערער</p>
               </CardContent>
             </Card>
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
-                <Star className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
+                <SquareLibrary className="w-12 h-12 mx-auto mb-4 text-campaign-orange" />
                 <h3 className="text-2xl font-bold mb-2">חינוך ציוני</h3>
                 <p className="text-gray-600">ערכים שחייבים לשמר</p>
               </CardContent>
