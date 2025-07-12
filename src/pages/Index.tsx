@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,7 +10,6 @@ import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 import { parsePhoneNumber } from "libphonenumber-js";
 import { PhoneInput } from "@/components/ui/phone-input";
-
 const Index = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -42,36 +39,27 @@ const Index = () => {
       if (!domain) return false;
 
       // Fetch disposable domains
-      const [domainsResponse, wildcardsResponse] = await Promise.all([
-        fetch('https://unpkg.com/disposable-email-domains@1.0.62/index.json'),
-        fetch('https://unpkg.com/disposable-email-domains@1.0.62/wildcard.json')
-      ]);
-
+      const [domainsResponse, wildcardsResponse] = await Promise.all([fetch('https://unpkg.com/disposable-email-domains@1.0.62/index.json'), fetch('https://unpkg.com/disposable-email-domains@1.0.62/wildcard.json')]);
       const domains = await domainsResponse.json();
       const wildcards = await wildcardsResponse.json();
-
       if (domains.includes(domain)) return true;
-
       for (let wildcard of wildcards) {
         const suffix = wildcard.slice(1);
         if (domain.endsWith(suffix)) return true;
       }
-
       return false;
     } catch (error) {
       console.error('Error checking disposable email:', error);
       return false;
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!email || !phone) {
       toast({
         title: "שגיאה",
         description: "אנא מלא את כל השדות הנדרשים",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
@@ -81,7 +69,7 @@ const Index = () => {
       toast({
         title: "שגיאה",
         description: "כתובת המייל אינה תקינה",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
@@ -89,9 +77,9 @@ const Index = () => {
     // Validate phone number
     if (!validatePhone(phone)) {
       toast({
-        title: "שגיאה", 
+        title: "שגיאה",
         description: "מספר הטלפון אינו תקין",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
@@ -102,38 +90,33 @@ const Index = () => {
       toast({
         title: "שגיאה",
         description: "לא ניתן להשתמש בכתובת מייל זמנית",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-    
     try {
       // Send data to Google Sheets via Apps Script
       const response = await fetch('https://script.google.com/macros/s/AKfycbw3zwjybrzhipA4YuKP336bOGWPjD2VlXhuV8lizy84XEmYioIk5ffhfVkzPqTsJ0YigA/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
+          'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify({
           email: email,
           phone: phone,
           timestamp: new Date().toISOString(),
           source: 'פדגוגיה ביקורתית רעילה'
-        }),
+        })
       });
-
       if (response.ok) {
         // Store in localStorage for navigation
         localStorage.setItem('userEmail', email);
         localStorage.setItem('userPhone', phone);
-        
         toast({
           title: "הרשמה בוצעה בהצלחה!",
-          description: "הפרטים נשלחו בהצלחה. עכשיו תוכל לבחור תבניות מייל לקמפיין",
+          description: "הפרטים נשלחו בהצלחה. עכשיו תוכל לבחור תבניות מייל לקמפיין"
         });
-        
         navigate('/campaign');
       } else {
         throw new Error('Failed to submit');
@@ -143,25 +126,26 @@ const Index = () => {
       toast({
         title: "שגיאה בשליחה",
         description: "אנא נסה שוב או צור קשר עימנו",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-10"></div>
         <div className="container mx-auto px-4 py-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
               פדגוגיה ביקורתית רעילה
             </h1>
@@ -171,17 +155,21 @@ const Index = () => {
           </motion.div>
 
           {/* Stats Cards */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-3 gap-6 mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.2
+        }} className="grid md:grid-cols-3 gap-6 mb-16">
             <Card className="hover-lift glass-effect">
               <CardContent className="p-6 text-center">
                 <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-campaign-blue" />
                 <h3 className="text-2xl font-bold mb-2">4 מהלכים</h3>
-                <p className="text-gray-600">של ניתוק מסוכן</p>
+                <p className="text-gray-600">של ניתוק מזהות</p>
               </CardContent>
             </Card>
             <Card className="hover-lift glass-effect">
@@ -201,12 +189,16 @@ const Index = () => {
           </motion.div>
 
           {/* 4 Steps Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.3
+        }} className="mb-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">ארבעת מהלכי הניתוק</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -215,11 +207,16 @@ const Index = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: -30
+            }} animate={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              duration: 0.6,
+              delay: 0.4
+            }}>
                 <Card className="hover-lift h-full">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
@@ -240,11 +237,16 @@ const Index = () => {
                 </Card>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: 30
+            }} animate={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              duration: 0.6,
+              delay: 0.5
+            }}>
                 <Card className="hover-lift h-full">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
@@ -256,20 +258,23 @@ const Index = () => {
                           זהות משפחתית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          ההורים מוצגים כ"לא רלוונטיים" כי הם "לא עברו תהליך" של ערעור הזהות הציונית. כך נוצר קרע בין התלמיד למשפחתו.
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">ההורים מוצגים כ&quot;לא רלוונטיים&quot; כי הם &quot;לא עברו תהליך&quot; של ערעור הזהות הציונית. כך נוצר קרע בין התלמיד למשפחתו.</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: -30
+            }} animate={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              duration: 0.6,
+              delay: 0.6
+            }}>
                 <Card className="hover-lift h-full">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
@@ -290,11 +295,16 @@ const Index = () => {
                 </Card>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: 30
+            }} animate={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              duration: 0.6,
+              delay: 0.7
+            }}>
                 <Card className="hover-lift h-full">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
@@ -321,12 +331,16 @@ const Index = () => {
           <VideoSection />
 
           {/* Email Collection Form */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-2xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.6
+        }} className="max-w-2xl mx-auto">
             <Card className="hover-lift glass-effect">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
@@ -344,16 +358,7 @@ const Index = () => {
                        </Label>
                        <div className="relative">
                          <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                         <Input
-                           id="email"
-                           type="email"
-                           placeholder="הזן כתובת מייל"
-                           value={email}
-                           onChange={(e) => setEmail(e.target.value)}
-                           className="pl-10 h-12 text-lg text-left"
-                           required
-                           dir="ltr"
-                         />
+                         <Input id="email" type="email" placeholder="הזן כתובת מייל" value={email} onChange={e => setEmail(e.target.value)} className="pl-10 h-12 text-lg text-left" required dir="ltr" />
                        </div>
                      </div>
                      
@@ -362,21 +367,12 @@ const Index = () => {
                          מספר טלפון
                        </Label>
                        <div className="relative">
-                         <PhoneInput
-                           value={phone}
-                           onChange={(value) => setPhone(value || "")}
-                           placeholder="הזן מספר טלפון"
-                           className="h-12 text-lg text-left"
-                         />
+                         <PhoneInput value={phone} onChange={value => setPhone(value || "")} placeholder="הזן מספר טלפון" className="h-12 text-lg text-left" />
                        </div>
                      </div>
                   </div>
                   
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full h-14 text-lg font-semibold gradient-bg hover:opacity-90 transition-opacity animate-pulse-glow"
-                  >
+                  <Button type="submit" disabled={isSubmitting} className="w-full h-14 text-lg font-semibold gradient-bg hover:opacity-90 transition-opacity animate-pulse-glow">
                     {isSubmitting ? "נרשם..." : "הצטרף למאבק"}
                   </Button>
                 </form>
@@ -389,9 +385,6 @@ const Index = () => {
           </motion.div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
-
