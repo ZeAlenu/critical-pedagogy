@@ -23,9 +23,9 @@ const CustomPhoneInput: React.FC<PhoneInputProps> = (
         countryCallingCodeEditable={false}
         className={cn(
           "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          "[&>.PhoneInputInput]:border-0 [&>.PhoneInputInput]:outline-0 [&>.PhoneInputInput]:ring-0 [&>.PhoneInputInput]:focus:ring-0 [&>.PhoneInputInput]:bg-transparent [&>.PhoneInputInput]:p-0 [&>.PhoneInputInput]:h-auto",
-          "[&>.PhoneInputCountrySelect]:mr-2 [&>.PhoneInputCountrySelect]:border-0 [&>.PhoneInputCountrySelect]:bg-transparent [&>.PhoneInputCountrySelect]:outline-0",
-          "ltr",
+          "[&>.PhoneInputInput]:border-0 [&>.PhoneInputInput]:outline-0 [&>.PhoneInputInput]:ring-0 [&>.PhoneInputInput]:focus:ring-0 [&>.PhoneInputInput]:bg-transparent [&>.PhoneInputInput]:p-0 [&>.PhoneInputInput]:h-auto [&>.PhoneInputInput]:text-left",
+          "[&>.PhoneInputCountrySelect]:ml-0 [&>.PhoneInputCountrySelect]:mr-2 [&>.PhoneInputCountrySelect]:border-0 [&>.PhoneInputCountrySelect]:bg-transparent [&>.PhoneInputCountrySelect]:outline-0 [&>.PhoneInputCountrySelect]:order-first",
+          "text-left",
           className
         )}
       />
