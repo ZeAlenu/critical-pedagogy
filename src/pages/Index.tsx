@@ -339,7 +339,7 @@ const Index = () => {
                 <form onSubmit={handleSubmit} className="space-y-6" dir="ltr">
                   <div className="space-y-4">
                      <div className="space-y-2">
-                       <Label htmlFor="email" className="text-right text-sm font-medium">
+                       <Label htmlFor="email" className="text-right block text-lg font-bold text-gray-800">
                          כתובת מייל *
                        </Label>
                        <div className="relative">
@@ -358,7 +358,7 @@ const Index = () => {
                      </div>
                      
                      <div className="space-y-2">
-                       <Label htmlFor="phone" className="text-right text-sm font-medium">
+                       <Label htmlFor="phone" className="text-right block text-lg font-bold text-gray-800">
                          מספר טלפון *
                        </Label>
                        <div className="relative">
