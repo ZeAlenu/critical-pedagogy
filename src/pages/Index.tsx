@@ -10,6 +10,7 @@ import { Mail, Phone, Play, Users, Target, Megaphone, Shield, BookOpen, AlertTri
 import VideoSection from "@/components/VideoSection";
 import { motion } from "framer-motion";
 import { parsePhoneNumber } from "libphonenumber-js";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -336,29 +337,27 @@ const Index = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-4">
-                    <div className="relative">
-                      <Mail className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
-                      <Input
-                        type="email"
-                        placeholder="כתובת מייל"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="pr-10 h-12 text-lg"
-                        required
-                      />
-                    </div>
-                    
-                    <div className="relative">
-                      <Phone className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
-                      <Input
-                        type="tel"
-                        placeholder="מספר טלפון"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="pr-10 h-12 text-lg"
-                        required
-                      />
-                    </div>
+                     <div className="relative">
+                       <Mail className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+                       <Input
+                         type="email"
+                         placeholder="כתובת מייל"
+                         value={email}
+                         onChange={(e) => setEmail(e.target.value)}
+                         className="pr-10 h-12 text-lg ltr"
+                         required
+                         dir="ltr"
+                       />
+                     </div>
+                     
+                     <div className="relative">
+                       <PhoneInput
+                         value={phone}
+                         onChange={(value) => setPhone(value || "")}
+                         placeholder="מספר טלפון"
+                         className="h-12 text-lg"
+                       />
+                     </div>
                   </div>
                   
                   <Button
