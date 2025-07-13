@@ -149,7 +149,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
               פדגוגיה ביקורתית רעילה
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
               !עוצרים את מהלכי עירעור הזהות המסוכנים במערכת החינוך. אקטיביזם לא בבית ספרנו. 
             </p>
           </motion.div>
