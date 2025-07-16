@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const QuoteSection = () => {
+  useEffect(() => {
+    // Load Twitter widgets after component mounts
+    if ((window as any).twttr?.widgets) {
+      (window as any).twttr.widgets.load();
+    }
+  }, []);
   return (
     <motion.div 
       initial={{ opacity: 0, y: 30 }}
