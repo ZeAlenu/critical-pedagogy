@@ -143,6 +143,81 @@ const Campaign = () => {
           </p>
         </motion.div>
 
+        {/* About Toxic Critical Pedagogy Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-16"
+        >
+          <Card className="max-w-6xl mx-auto glass-effect">
+            <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50 border-b">
+              <CardTitle className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                מה זה פדגוגיה ביקורתית רעילה?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-8" dir="rtl">
+              <div className="prose prose-lg max-w-none text-right leading-relaxed space-y-6">
+                <p className="text-xl font-semibold text-gray-800 mb-6">
+                  דמיינו בית ספר שבו לא מלמדים אהבת מולדת, כבוד להורים או גאווה במסורת.
+                  <br />
+                  <span className="text-red-600 font-bold">אלא בדיוק להפך.</span>
+                </p>
+                
+                <p className="text-lg text-gray-700">
+                  מה שפעם נקרא "חינוך" הפך לזירת שטיפת מוח אידיאולוגית. מהגן ועד האקדמיה – מערכות שלמות עוסקות לא בהקניית ידע, אלא בהנדסת תודעה. במקום מתמטיקה, היסטוריה וספרות – ילדינו לומדים שמדינת ישראל היא מדכאת, שהמסורת היא שוביניסטית, ושההורים? סמל לעבר שצריך למחוק.
+                </p>
+                
+                <div className="bg-red-50 border-r-4 border-red-500 p-6 my-8">
+                  <p className="text-lg font-bold text-red-800 mb-2">זו לא קונספירציה. זו המציאות.</p>
+                </div>
+                
+                <p className="text-lg text-gray-700">
+                  תחת הכותרת המכובסת "פדגוגיה ביקורתית", שמקורה בתיאוריות מרקסיסטיות שיובאו לכאן דרך האו"ם בשנות ה־90, הפכה מערכת החינוך הישראלית לכלי פוליטי. בכיתה לא מחנכים – מגייסים. לא לידע – אלא ל"מאבק". הילדים שלנו כיום לא לומדים איך לחשוב – אלא מה לחשוב.
+                </p>
+                
+                <p className="text-lg text-gray-700">
+                  במהפכה שקטה, שנעשתה הרחק מעיני ההורים, חדרו למערכת "סוכני שינוי" – אנשי חינוך ואקדמיה הרואים עצמם שליחים של אג'נדה עולמית. התוצאה ברורה:
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-4 my-8">
+                  <div className="bg-red-100 p-4 rounded-lg text-center">
+                    <p className="text-red-700 font-bold">✅ ציונים בירידה</p>
+                  </div>
+                  <div className="bg-red-100 p-4 rounded-lg text-center">
+                    <p className="text-red-700 font-bold">✅ זהות יהודית הולכת ומתפוגגת</p>
+                  </div>
+                  <div className="bg-red-100 p-4 rounded-lg text-center">
+                    <p className="text-red-700 font-bold">✅ אהבת הארץ מוחלפת בתחושת בושה</p>
+                  </div>
+                </div>
+                
+                <p className="text-lg text-gray-700">
+                  במקום לגדול עם שורשים – הילדים נעקרים מהם. במקום להיות גאים – הם נבוכים. במקום לבנות עתיד – הם לומדים לשנוא את ההווה.
+                </p>
+                
+                <div className="bg-orange-50 border-2 border-orange-200 p-6 my-8 text-center">
+                  <p className="text-xl font-bold text-orange-800 mb-4">זה לא חינוך.</p>
+                  <p className="text-xl font-bold text-red-700">זו הפקרה.</p>
+                </div>
+                
+                <p className="text-xl font-bold text-gray-800">
+                  זהו בגידה של מערכת החינוך בנו - ההורים.
+                  <br />
+                  <span className="text-red-600">וזה חייב להיפסק.</span>
+                </p>
+                
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border-2 border-blue-200 text-center my-8">
+                  <p className="text-2xl font-bold text-blue-800 mb-4">הגיע הזמן לקחת אחריות.</p>
+                  <p className="text-lg text-gray-700">
+                    הילדים שלנו – והעתיד של המדינה שלנו – לא יכולים להרשות לנו להמשיך לישון בעמידה.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         <div className="grid gap-8 max-w-4xl mx-auto">
           {emailTemplates.map((template, index) => (
             <motion.div
