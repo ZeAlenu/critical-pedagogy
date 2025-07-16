@@ -33,6 +33,13 @@ const VideoSection = () => {
         <p className="text-xl text-gray-600">
           צפו בסרטונים שחושפים את האמת על הפדגוגיה הביקורתית הרעילה
         </p>
+        
+        {/* Quote below testimonials text */}
+        <div className="mt-8 max-w-4xl mx-auto">
+          <blockquote className="text-2xl md:text-3xl font-bold text-center italic text-gray-800 px-6 py-8 bg-white/50 rounded-lg border-r-4 border-campaign-orange shadow-lg" dir="rtl">
+            "רצינו לגדל דור של אפיקורסים, וגידלנו דור של עמי ארצות"
+          </blockquote>
+        </div>
       </div>
       
       <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">

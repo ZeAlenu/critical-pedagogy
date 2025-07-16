@@ -415,18 +415,6 @@ const Index = () => {
             </Card>
           </motion.div>
 
-          {/* Quote Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mb-16 max-w-4xl mx-auto"
-          >
-            <blockquote className="text-2xl md:text-3xl font-bold text-center italic text-gray-800 px-6 py-8 bg-white/50 rounded-lg border-r-4 border-campaign-orange shadow-lg" dir="rtl">
-              "רצינו לגדל דור של אפיקורסים, וגידלנו דור של עמי ארצות"
-            </blockquote>
-          </motion.div>
-
           {/* Video Section */}
           <VideoSection />
 
