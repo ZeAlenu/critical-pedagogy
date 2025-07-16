@@ -152,21 +152,18 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
 שמים סוף לעירעור הזהות במערכת החינוך. פוליטיקה לא בבית ספרנו!
             </p>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8"
-            />
-            <div className="mt-8">
+            <div className="mt-8 pointer-events-none">
+            </div>
+            <div className="mt-8 relative z-10">
               <Button 
                 onClick={() => {
+                  console.log('Button clicked!');
                   const target = document.getElementById('registration-form');
                   if (target) {
                     target.scrollIntoView();
                   }
                 }}
-                className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200"
+                className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 pointer-events-auto"
                 size="lg"
               >
                 הצטרף למאבק
