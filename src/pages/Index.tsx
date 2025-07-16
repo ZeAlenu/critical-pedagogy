@@ -152,6 +152,21 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
 שמים סוף לעירעור הזהות במערכת החינוך. פוליטיקה לא בבית ספרנו!
             </p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8"
+            >
+              <button 
+                onClick={() => {
+                  document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 cursor-pointer h-11 rounded-md"
+              >
+                הצטרף למאבק
+              </button>
+            </motion.div>
           </motion.div>
 
           {/* Stats Cards */}
