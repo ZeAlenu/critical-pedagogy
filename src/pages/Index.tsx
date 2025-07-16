@@ -135,7 +135,7 @@ const Index = () => {
   return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-10"></div>
+        <div className="absolute inset-0 gradient-bg opacity-10 -z-10"></div>
         <div className="container mx-auto px-4 py-16">
           <motion.div initial={{
           opacity: 0,
