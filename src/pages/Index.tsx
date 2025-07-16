@@ -152,6 +152,12 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
 שמים סוף לעירעור הזהות במערכת החינוך. פוליטיקה לא בבית ספרנו!
             </p>
+            
+            <div className="mt-8 mb-8 max-w-4xl mx-auto">
+              <blockquote className="text-2xl md:text-3xl font-bold text-center italic text-gray-800 px-6 py-8 bg-white/50 rounded-lg border-r-4 border-campaign-orange shadow-lg" dir="rtl">
+                "רצינו לגדל דור של אפיקורסים, וגידלנו דור של עמי ארצות"
+              </blockquote>
+            </div>
             <div className="mt-8 pointer-events-none">
             </div>
             <div className="mt-8 relative z-10">
