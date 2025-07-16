@@ -379,6 +379,11 @@ const Index = () => {
                   <p className="text-lg text-gray-700">
                     במקום לגדול עם שורשים – הילדים נעקרים מהם. במקום להיות גאים – הם נבוכים. במקום לבנות עתיד – הם לומדים לשנוא את ההווה.
                   </p>
+
+                  <p className="text-lg text-gray-700">
+                    השכלה, שמחת חיים ותום נעורים נגזלים מהם על ידי אידיאולוגים משולחי רסן
+                  </p>
+
                   
                   <div className="bg-orange-50 border-2 border-orange-200 p-6 my-8 text-center">
                     <p className="text-xl font-bold text-orange-800 mb-4">זה לא חינוך.</p>
@@ -388,15 +393,15 @@ const Index = () => {
                   <p className="text-xl font-bold text-gray-800">
                     זאת בגידה של מערכת החינוך בנו - ההורים.
                     <br />
-                    וזה פשע נגד האנושות הגוזל את ילדותם ועתידם של ילדינו
+                    זה פשע נגד האנושות
                     <br />
                     <span className="text-red-600">זה חייב להיפסק.</span>
                   </p>
                   
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border-2 border-blue-200 text-center my-8">
-                    <p className="text-2xl font-bold text-blue-800 mb-4">הגיע הזמן לקחת אחריות.</p>
+                    <p className="text-2xl font-bold text-blue-800 mb-4">זה עלינו 🧡🇮🇱 לקחת אחריות ולתקן</p>
                     <p className="text-lg text-gray-700">
-                      הילדים שלנו – והעתיד של המדינה שלנו – לא יכולים להרשות לנו להמשיך לישון בעמידה.
+                      הילדים שלנו – והעתיד של המדינה שלנו – קוראים לנו להציל אותם.
                     </p>
                   </div>
                 </div>
