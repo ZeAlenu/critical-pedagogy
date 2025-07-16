@@ -350,9 +350,7 @@ const Index = () => {
             <Card className="max-w-6xl mx-auto glass-effect">
               <CardContent className="p-8" dir="rtl">
                 <div className="text-center mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">
-                    מה זה פדגוגיה ביקורתית רעילה?
-                  </h2>
+                  <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">מה זה פדגוגיה ביקורתית?</h2>
                 </div>
                 <div className="prose prose-lg max-w-none text-right leading-relaxed space-y-6">
                   <p className="text-xl font-semibold text-gray-800 mb-6">
@@ -379,7 +377,9 @@ const Index = () => {
                   
                   <div className="grid md:grid-cols-3 gap-4 my-8">
                     <div className="bg-red-100 p-4 rounded-lg text-center">
-                      <p className="text-red-700 font-bold">✅ ציונים בירידה</p>
+                      <p className="text-red-700 font-bold">✅ ירידה בציונים
+
+                    </p>
                     </div>
                     <div className="bg-red-100 p-4 rounded-lg text-center">
                       <p className="text-red-700 font-bold">✅ זהות יהודית הולכת ומתפוגגת</p>
@@ -412,7 +412,7 @@ const Index = () => {
                   </p>
                   
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border-2 border-blue-200 text-center my-8">
-                    <p className="text-2xl font-bold text-blue-800 mb-4">זה עלינו 🧡🇮🇱 לקחת אחריות ולתקן</p>
+                    <p className="text-2xl font-bold text-blue-800 mb-4">זה עלינו לקחת אחריות ולתקן</p>
                     <p className="text-lg text-gray-700">
                       הילדים שלנו – והעתיד של המדינה שלנו – קוראים לנו להציל אותם.
                     </p>
