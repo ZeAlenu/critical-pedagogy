@@ -159,7 +159,10 @@ const Index = () => {
               className="mt-8"
             >
               <Button 
-                onClick={() => navigate('/campaign')}
+                onClick={() => {
+                  const formSection = document.getElementById('registration-form');
+                  formSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 size="lg"
                 className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200"
               >
@@ -427,16 +430,22 @@ const Index = () => {
           <VideoSection />
 
           {/* Email Collection Form */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.6
-        }} className="max-w-2xl mx-auto">
+          <motion.div 
+            id="registration-form"
+            initial={{
+              opacity: 0,
+              y: 30
+            }} 
+            animate={{
+              opacity: 1,
+              y: 0
+            }} 
+            transition={{
+              duration: 0.8,
+              delay: 0.6
+            }} 
+            className="max-w-2xl mx-auto"
+          >
             <Card className="hover-lift glass-effect">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
