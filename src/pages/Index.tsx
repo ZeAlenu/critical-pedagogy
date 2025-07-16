@@ -160,11 +160,18 @@ const Index = () => {
             >
               <Button 
                 onClick={() => {
+                  console.log('Button clicked!');
                   const formSection = document.getElementById('registration-form');
-                  formSection?.scrollIntoView({ behavior: 'smooth' });
+                  console.log('Form section found:', formSection);
+                  if (formSection) {
+                    formSection.scrollIntoView({ behavior: 'smooth' });
+                    console.log('Scrolling to form section');
+                  } else {
+                    console.log('Form section not found');
+                  }
                 }}
                 size="lg"
-                className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200"
+                className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 cursor-pointer"
               >
                 הצטרף למאבק
               </Button>
