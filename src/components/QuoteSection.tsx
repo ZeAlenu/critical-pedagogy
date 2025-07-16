@@ -44,6 +44,16 @@ const QuoteSection = () => {
           <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-transparent via-campaign-orange/10 to-transparent rounded-2xl"></div>
         </div>
       </div>
+      
+      {/* Twitter embed */}
+      <div className="mt-8 flex justify-center">
+        <div className="w-full max-w-xl">
+          <blockquote className="twitter-tweet" data-theme="light" data-align="center">
+            <a href="https://x.com/Kinnert2/status/1944681235629957630"></a>
+          </blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+        </div>
+      </div>
     </motion.div>
   );
 };
