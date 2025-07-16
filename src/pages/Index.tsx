@@ -157,7 +157,8 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-8"
-            >
+            />
+            <div className="mt-8">
               <Button 
                 onClick={() => {
                   const target = document.getElementById('registration-form');
@@ -170,7 +171,7 @@ const Index = () => {
               >
                 הצטרף למאבק
               </Button>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Stats Cards */}
