@@ -49,9 +49,9 @@ const QuoteSection = () => {
       <div className="mt-8 flex justify-center">
         <div className="w-full max-w-xl">
           <blockquote className="twitter-tweet" data-theme="light" data-align="center">
-            <a href="https://x.com/Kinnert2/status/1944681235629957630"></a>
+            <p lang="he" dir="rtl">רצינו לגדל דור של אפיקורסים, וגידלנו דור של עמי ארצות<br/><br/>יעקב חזן ממייסדי הקיבוץ הארצי ומפ״ם</p>
+            &mdash; רז כינרת (@Kinnert2) <a href="https://twitter.com/Kinnert2/status/1944681235629957630?ref_src=twsrc%5Etfw">January 11, 2025</a>
           </blockquote>
-          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
         </div>
       </div>
     </motion.div>
