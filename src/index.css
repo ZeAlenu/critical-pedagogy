@@ -39,6 +39,11 @@
 
     --radius: 0.5rem;
 
+    /* Campaign colors */
+    --campaign-orange: 25 95% 53%;
+    --campaign-blue: 217 91% 60%;
+    --campaign-purple: 262 83% 58%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
