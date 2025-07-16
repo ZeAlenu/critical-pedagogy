@@ -155,17 +155,13 @@ const Index = () => {
             <div className="mt-8 pointer-events-none">
             </div>
             <div className="mt-8 relative z-10">
-              <Button 
-                onClick={() => {
-                  console.log('Button clicked!');
-                  const target = document.getElementById('registration-form');
-                  if (target) {
-                    target.scrollIntoView();
-                  }
-                }}
-                className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 pointer-events-auto"
-                size="lg"
-              >
+              <Button onClick={() => {
+              console.log('Button clicked!');
+              const target = document.getElementById('registration-form');
+              if (target) {
+                target.scrollIntoView();
+              }
+            }} className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 pointer-events-auto" size="lg">
                 הצטרף למאבק
               </Button>
             </div>
@@ -275,7 +271,7 @@ const Index = () => {
                           זהות משפחתית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
-                        <p className="text-gray-600 leading-relaxed">ההורים מוצגים כ&quot;לא רלוונטיים&quot; כי הם &quot;לא עברו תהליך&quot; של ערעור הזהות הציונית. כך נוצר קרע בין התלמיד למשפחתו.</p>
+                        <p className="text-gray-600 leading-relaxed">ההורים מוצגים כ"לא רלוונטיים" כי הם "לא עברו תהליך" (של ערעור זהות ורדיקליזציה). כך נוצר קרע בין התלמיד למשפחתו.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -345,12 +341,16 @@ const Index = () => {
           </motion.div>
 
           {/* About Toxic Critical Pedagogy Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.8
+        }} className="mb-16">
             <Card className="max-w-6xl mx-auto glass-effect">
               <CardContent className="p-8" dir="rtl">
                 <div className="text-center mb-8">
@@ -430,22 +430,16 @@ const Index = () => {
           <VideoSection />
 
           {/* Email Collection Form */}
-          <motion.div 
-            id="registration-form"
-            initial={{
-              opacity: 0,
-              y: 30
-            }} 
-            animate={{
-              opacity: 1,
-              y: 0
-            }} 
-            transition={{
-              duration: 0.8,
-              delay: 0.6
-            }} 
-            className="max-w-2xl mx-auto"
-          >
+          <motion.div id="registration-form" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.6
+        }} className="max-w-2xl mx-auto">
             <Card className="hover-lift glass-effect">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
