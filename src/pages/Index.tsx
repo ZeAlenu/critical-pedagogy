@@ -386,9 +386,10 @@ const Index = () => {
                   </div>
                   
                   <p className="text-xl font-bold text-gray-800">
-                    זהו בגידה של מערכת החינוך בנו - ההורים.
+                    זאת בגידה של מערכת החינוך בנו - ההורים.
                     <br />
-                    <span className="text-red-600">וזה חייב להיפסק.</span>
+                    וזה פגע נגד האנושות הגוזל את עתיד ילדינו
+                    <span className="text-red-600">זה חייב להיפסק.</span>
                   </p>
                   
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border-2 border-blue-200 text-center my-8">
