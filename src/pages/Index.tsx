@@ -150,7 +150,7 @@ const Index = () => {
               פדגוגיה ביקורתית רעילה
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
-שמים סוף לעירעור הזהות במערכת החינוך. פוליטיקה לא בבית ספרנו!
+שמים סוף לעירעור הזהות במערכת החינוך. <a href="/campaign" className="text-campaign-blue hover:text-campaign-purple font-semibold underline transition-colors duration-200">הצטרף למאבק</a> פוליטיקה לא בבית ספרנו!
             </p>
           </motion.div>
 
