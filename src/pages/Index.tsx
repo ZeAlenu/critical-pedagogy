@@ -159,8 +159,17 @@ const Index = () => {
               className="mt-8"
             >
               <button 
-                onClick={() => {
-                  document.getElementById('registration-form')?.scrollIntoView();
+                onClick={(e) => {
+                  console.log('Button was clicked!');
+                  e.preventDefault();
+                  const target = document.getElementById('registration-form');
+                  console.log('Target element:', target);
+                  if (target) {
+                    console.log('Scrolling to target...');
+                    target.scrollIntoView();
+                  } else {
+                    console.log('Target element not found!');
+                  }
                 }}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200 cursor-pointer h-11 rounded-md"
               >
