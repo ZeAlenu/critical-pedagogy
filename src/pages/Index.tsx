@@ -328,10 +328,8 @@ const Index = () => {
                         <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
                           חינוך מחדש
                         </div>
-                        <h3 className="text-xl font-bold mb-3">ניתוק התלמיד "המפריע"</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          שיימינג פומבי של תלמיד ששואל שאלות רציונליות. התלמיד מואשם ב"עשיית חקירה" ומוקע בפני חבריו כדי למנוע שיח פתוח וביקורתי.
-                        </p>
+                        <h3 className="text-xl font-bold mb-3">בידוד התלמיד "המפריע"</h3>
+                        <p className="text-gray-600 leading-relaxed">שיימינג פומבי של תלמיד ששואל שאלות רציונליות. התלמיד מואשם ב"עשיית חקירה" ומוקע בפני חבריו כדי למנוע שיח נטול אג׳נדה החותר לאמת.</p>
                       </div>
                     </div>
                   </CardContent>
