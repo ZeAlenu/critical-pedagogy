@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Phone, Play, Users, Target, Megaphone, Shield, Star, AlertTriangle, UserX, Brain, MessageSquareX, ShieldX, SquareLibrary, Library } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
+import QuoteSection from "@/components/QuoteSection";
 import { motion } from "framer-motion";
 import { parsePhoneNumber } from "libphonenumber-js";
 import { PhoneInput } from "@/components/ui/phone-input";
@@ -417,6 +418,9 @@ const Index = () => {
 
           {/* Video Section */}
           <VideoSection />
+
+          {/* Quote Section */}
+          <QuoteSection />
 
           {/* Email Collection Form */}
           <motion.div id="registration-form" initial={{
