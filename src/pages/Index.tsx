@@ -375,13 +375,13 @@ const Index = () => {
                   
                   <div className="grid md:grid-cols-3 gap-4 my-8">
                     <div className="bg-red-100 p-4 rounded-lg text-center">
-                      <p className="text-red-700 font-bold">✅ ירידה בציונים ובהישגים אקדמיים</p>
+                      <p className="text-red-700 font-bold">❌ ירידה בציונים ובהישגים אקדמיים</p>
                     </div>
                     <div className="bg-red-100 p-4 rounded-lg text-center">
-                      <p className="text-red-700 font-bold">✅ זהות יהודית הולכת ומתפוגגת</p>
+                      <p className="text-red-700 font-bold">❌ זהות יהודית הולכת ומתפוגגת</p>
                     </div>
                     <div className="bg-red-100 p-4 rounded-lg text-center">
-                      <p className="text-red-700 font-bold">✅ אהבת הארץ מוחלפת בתחושת בושה</p>
+                      <p className="text-red-700 font-bold">❌ אהבת הארץ מוחלפת בתחושת בושה</p>
                     </div>
                   </div>
                   
