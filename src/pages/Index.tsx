@@ -150,9 +150,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
               פדגוגיה ביקורתית רעילה
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">
-שמים סוף לעירעור הזהות במערכת החינוך. פוליטיקה לא בבית ספרנו!
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">שמים סוף לעירעור הזהות במערכת החינוך. חוזרים לחינוך ציוני!</p>
             <div className="mt-8 pointer-events-none">
             </div>
             <div className="mt-8 relative z-10">
@@ -242,9 +240,7 @@ const Index = () => {
                           זהות לאומית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מהזהות הציונית</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          השטחת דמות הפלסטיני לכדי תפקיד קורבן מוחלט, כך שהיהודי נכנס לתפקיד "המדכא". זה מערער את הזהות הציונית הבסיסית של התלמיד.
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">הטלת ספק ובצדקת דרכנו. ניתוק ילדינו ממורשת עמנו ומסיפורי התנ״ך. השטחת דמות הפלסטיני לכדי תפקיד קורבן.</p>
                       </div>
                     </div>
                   </CardContent>
