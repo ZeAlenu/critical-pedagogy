@@ -240,7 +240,7 @@ const Index = () => {
                           זהות לאומית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מהזהות הציונית</h3>
-                        <p className="text-gray-600 leading-relaxed">הטלת ספק ובצדקת דרכנו. ניתוק ילדינו ממורשת עמנו ומסיפורי התנ״ך. השטחת דמות הפלסטיני לכדי תפקיד קורבן.</p>
+                        <p className="text-gray-600 leading-relaxed">השטחת דמות הפלסטיני לכדי תפקיד קורבן והטלת ספק בצדקת דרכנו. ניתוק ילדינו ממורשת עמנו ומסיפורי התנ״ך. </p>
                       </div>
                     </div>
                   </CardContent>
@@ -268,7 +268,7 @@ const Index = () => {
                           זהות משפחתית
                         </div>
                         <h3 className="text-xl font-bold mb-3">ניתוק מההורים</h3>
-                        <p className="text-gray-600 leading-relaxed">ההורים מוצגים כ"לא רלוונטיים" כי הם "לא עברו תהליך" (של ערעור זהות ורדיקליזציה). כך נוצר קרע בין התלמיד למשפחתו.</p>
+                        <p className="text-gray-600 leading-relaxed">ההורים מוצגים כ"לא רלוונטיים" כי הם "לא עברו תהליך" (של ערעור זהות ורדיקליזציה). כך יוצרים ריחוק בין התלמיד למשפחתו.</p>
                       </div>
                     </div>
                   </CardContent>
