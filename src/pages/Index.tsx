@@ -493,7 +493,7 @@ const Index = () => {
         className="border-t border-gray-200 bg-gray-50 py-12"
       >
         <div className="container mx-auto px-4">
-          <div className="text-center">
+          <div className="text-left">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-gray-600">
                 <Mail className="w-4 h-4" />
