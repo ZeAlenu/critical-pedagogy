@@ -102,9 +102,7 @@ const Campaign = () => {
       }} transition={{
         duration: 0.8
       }} className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6 select-text">
-            אירוע בית ספר מחוננים ליד״ה
-          </h1>
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6 select-text">אירוע בית ספר ליד״ה</h1>
           
           <div className="max-w-4xl mx-auto text-right text-gray-700 leading-relaxed space-y-2 mb-8">
             <p className="text-lg font-semibold">
