@@ -378,25 +378,24 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <p className="text-lg text-gray-700 mb-4">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.</p>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <span className="text-red-500 font-bold text-xl">•</span>
-                      <p className="text-lg text-gray-700">במקום לגדול עם שורשים – הילדים נעקרים מתרבותם</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-red-500 font-bold text-xl">•</span>
-                      <p className="text-lg text-gray-700">במקום להיות גאים במורשתם – הם מגדפים את שכניהם</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-red-500 font-bold text-xl">•</span>
-                      <p className="text-lg text-gray-700">במקום לבנות עתיד – הם לומדים לשנוא את ההווה</p>
+                  <div className="bg-red-50 border-r-4 border-red-500 p-6 my-8">
+                    <p className="text-lg font-semibold text-red-800 mb-4">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.</p>
+                    
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <span className="text-red-600 font-bold">❌</span>
+                        <p className="text-gray-700">במקום לגדול עם שורשים – הילדים נעקרים מתרבותם</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-red-600 font-bold">❌</span>
+                        <p className="text-gray-700">במקום להיות גאים במורשתם – הם מגדפים את שכניהם</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-red-600 font-bold">❌</span>
+                        <p className="text-gray-700">במקום לבנות עתיד – הם לומדים לשנוא את ההווה</p>
+                      </div>
                     </div>
                   </div>
-
-                  <p className="text-lg text-gray-700">
-                </p>
 
                   
                   <div className="bg-orange-50 border-2 border-orange-200 p-6 my-8 text-center">
