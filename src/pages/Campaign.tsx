@@ -100,146 +100,169 @@ const Campaign = () => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6 select-text">
-            מרכז המיילים שלנו
+            אירוע בית ספר מחוננים ליד״ה
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto select-text">
-            העתיקו את הרכיבים למייל שלכם ושלחו לכתובת הנדרשת
-          </p>
+          
+          <div className="max-w-4xl mx-auto text-right text-gray-700 leading-relaxed space-y-4 mb-8">
+            <p className="text-lg font-semibold">
+              "התפיסות [הציוניות] של אבא שלך לא רלוונטיות כי הוא לא עבר תהליך".
+            </p>
+            <p>
+              כך אמרה מורה בתכנית בשם "עתודה הומניסטית" בבית ספר יוקרתי בירושלים לאמתי שלם בכיתה י"ב.
+            </p>
+            <p>מהו אותו "תהליך"?</p>
+            <p>
+              במקום אהבת הארץ הם לומדים על ה"נכבה".
+              <br />
+              במקום ציונות הם מוכוונים לחוש בושה.
+              <br />
+              במקום היסטוריה מוחדרת לתלמידים אידאולוגיה צינית.
+            </p>
+            <p>
+              זה לא קורה רק בבתי ספר יוקרתיים אלא בכל הארץ. המהלך מקודם מלמעלה, כולל במוסדות להכשרת מורים העובדים בצורה הדוקה עם גופים אנטי ציוניים מובהקים כמו אונסק"ו.
+            </p>
+            <p>
+              לכן ההישגים הלימודיים של הילדים שלנו בירידה, תכני הזהות כמו תנ"ך ומולדת הולכים ונמוגים. והחלל הזה משמש להפיכת התלמיד ל"סוכן שינוי".
+            </p>
+            <p>
+              טכניקת ערעור הזהות הקיימת והחלפתה בזהות "סוכן השינוי" נקראת: "פדגוגיה ביקורתית". זו אינה חשיבה ביקורתית אלא שנאת זהות.
+            </p>
+            <p>
+              תהליך הפדגוגיה הביקורתית הוא מחתרתי. לכן כאשר אמתי שאל את המנהל אם אותה "פדגוגיה ביקורתית" מותרת בבית הספר או לא – הוא לא הסכים לענות.
+            </p>
+            <p className="font-semibold">הגיע הזמן לדרוש תשובות ולדרוש פיקוח!</p>
+            
+            <div className="bg-gradient-to-r from-campaign-blue/10 via-campaign-purple/10 to-campaign-orange/10 p-6 rounded-lg mt-8">
+              <p className="font-bold text-lg mb-2">הגיע הזמן לפתוח עיניים.</p>
+              <p>להחזיר את החינוך לילדינו.</p>
+              <p>להשיב לעצמנו את צדקת דרכנו.</p>
+              <p className="font-semibold">זה העתיד של הילדים שלנו. של כולנו.</p>
+            </div>
+          </div>
+
+          <Button 
+            onClick={() => setShowDialog(true)}
+            size="lg"
+            className="bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange text-white font-bold px-8 py-4 text-lg"
+          >
+            שלח מייל למפקח
+          </Button>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* יעד השליחה */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-campaign-blue" />
-                  יעד השליחה
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="font-mono text-lg">{emailRecipient}</p>
-                </div>
-                <Button
-                  onClick={handleCopyRecipient}
-                  variant={copiedRecipient ? "default" : "outline"}
-                  className="flex items-center gap-2"
-                >
-                  {copiedRecipient ? (
-                    <>
-                      <CheckCircle className="h-4 w-4" />
-                      הועתק!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-4 w-4" />
-                      העתק כתובת
-                    </>
-                  )}
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* נושא המייל */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-campaign-purple" />
-                  נושא המייל
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-lg">{emailSubject}</p>
-                </div>
-                <Button
-                  onClick={handleCopySubject}
-                  variant={copiedSubject ? "default" : "outline"}
-                  className="flex items-center gap-2"
-                >
-                  {copiedSubject ? (
-                    <>
-                      <CheckCircle className="h-4 w-4" />
-                      הועתק!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-4 w-4" />
-                      העתק נושא
-                    </>
-                  )}
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* תוכן המייל */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-campaign-orange" />
-                  תוכן המייל
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Textarea
-                  value={emailContent}
-                  readOnly
-                  className="min-h-[400px] bg-gray-50 text-right"
-                />
-                <Button
-                  onClick={handleCopyContent}
-                  variant={copiedContent ? "default" : "outline"}
-                  className="flex items-center gap-2"
-                >
-                  {copiedContent ? (
-                    <>
-                      <CheckCircle className="h-4 w-4" />
-                      הועתק!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-4 w-4" />
-                      העתק תוכן
-                    </>
-                  )}
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
 
         {/* Dialog */}
         <Dialog open={showDialog} onOpenChange={setShowDialog}>
-          <DialogContent>
+          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle>שליחת המייל</DialogTitle>
+              <DialogTitle className="text-xl">העתק את פרטי המייל</DialogTitle>
               <DialogDescription>
-                שלחת את המייל לכתובת hello@example.com?
+                העתק את הפרטים הבאים ושלח את המייל
               </DialogDescription>
             </DialogHeader>
+            
+            <div className="space-y-6">
+              {/* יעד השליחה */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-campaign-blue" />
+                    יעד השליחה
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="font-mono text-sm">{emailRecipient}</p>
+                  </div>
+                  <Button
+                    onClick={handleCopyRecipient}
+                    variant={copiedRecipient ? "default" : "outline"}
+                    className="flex items-center gap-2"
+                  >
+                    {copiedRecipient ? (
+                      <>
+                        <CheckCircle className="h-4 w-4" />
+                        הועתק!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4" />
+                        העתק כתובת
+                      </>
+                    )}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* נושא המייל */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-campaign-purple" />
+                    נושא המייל
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-sm">{emailSubject}</p>
+                  </div>
+                  <Button
+                    onClick={handleCopySubject}
+                    variant={copiedSubject ? "default" : "outline"}
+                    className="flex items-center gap-2"
+                  >
+                    {copiedSubject ? (
+                      <>
+                        <CheckCircle className="h-4 w-4" />
+                        הועתק!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4" />
+                        העתק נושא
+                      </>
+                    )}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* תוכן המייל */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-campaign-orange" />
+                    תוכן המייל
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <Textarea
+                    value={emailContent}
+                    readOnly
+                    className="min-h-[300px] bg-gray-50 text-right text-sm"
+                  />
+                  <Button
+                    onClick={handleCopyContent}
+                    variant={copiedContent ? "default" : "outline"}
+                    className="flex items-center gap-2"
+                  >
+                    {copiedContent ? (
+                      <>
+                        <CheckCircle className="h-4 w-4" />
+                        הועתק!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4" />
+                        העתק תוכן
+                      </>
+                    )}
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
             <DialogFooter className="gap-2">
               <Button variant="outline" onClick={() => setShowDialog(false)}>
-                עדיין לא
-              </Button>
-              <Button onClick={handleEmailSent}>
-                שלחתי
+                סגור
               </Button>
             </DialogFooter>
           </DialogContent>
