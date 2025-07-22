@@ -89,11 +89,9 @@ const Campaign = () => {
     setDialogStep(1);
     setShowDialog(true);
   };
-
   const handleNextStep = () => {
     setDialogStep(2);
   };
-
   const handleEmailSent = () => {
     console.log("success");
     setShowDialog(false);
@@ -152,8 +150,7 @@ const Campaign = () => {
         {/* Dialog */}
         <Dialog open={showDialog} onOpenChange={setShowDialog}>
           <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-            {dialogStep === 1 ? (
-              <>
+            {dialogStep === 1 ? <>
                 <DialogHeader>
                   <DialogTitle className="text-xl">שליחת מייל למפקח</DialogTitle>
                   <DialogDescription>
@@ -186,9 +183,7 @@ const Campaign = () => {
                     הבא
                   </Button>
                 </DialogFooter>
-              </>
-            ) : (
-              <>
+              </> : <>
                 <DialogHeader>
                   <DialogTitle className="text-xl">העתק את פרטי המייל</DialogTitle>
                   <DialogDescription>
@@ -279,7 +274,7 @@ const Campaign = () => {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="text-right space-y-3">
-                      <p className="text-blue-700">לאחר שליחת המייל למפקח, נא להעביר את המייל גם לכתובת:</p>
+                      <p className="text-blue-700">לאחר שליחת המייל למפקח, נא להעביר את המייל לכתובת:</p>
                       <div className="bg-white p-3 rounded border border-blue-200">
                         <p className="font-mono text-lg text-blue-800 font-semibold">zealenuedu@gmail.com</p>
                       </div>
@@ -296,8 +291,7 @@ const Campaign = () => {
                     סגור
                   </Button>
                 </DialogFooter>
-              </>
-            )}
+              </>}
           </DialogContent>
         </Dialog>
       </div>
