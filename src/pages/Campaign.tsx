@@ -12,7 +12,7 @@ const Campaign = () => {
   const [copiedRecipient, setCopiedRecipient] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const emailSubject = "לטיפולך כמפקח - פדגוגיה אנטי ציונית בבית ספר מצטיינים ליד״ה";
-  const emailRecipient = "davidnim@education.gov.il ; zealenuedu@gmail.com";
+  const emailRecipient = "davidnim@education.gov.il";
   const emailContent = `שלום דוד,
 
 צפיתי בראיון של אמתי שלם על החוויה שלו בשיעורי הספרות בתכנית "עתודה הומניסטית" בבית הספר ליד"ה. מתוך העדות עולה שחדווה (שם בדוי) ניצלה את השיעורים לערעור הזהות הציונית והחלפתה בזהות של "סוכן שינוי" — סוכן שרואה את המציאות לא דרך זהות יהודית או ציונית אלא דרך האבחנה בין "מדכאים" ל"מדוכאים".
@@ -160,6 +160,10 @@ const Campaign = () => {
                 <CardContent className="space-y-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="font-mono text-sm">{emailRecipient}</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded-lg text-sm text-right border border-blue-200 mt-2">
+                    <p className="font-semibold">חשוב!</p>
+                    <p>נא להוסיף גם את <span className="font-mono">zealenuedu@gmail.com</span> בעותק (CC) או להעביר את המייל לכתובת זו על מנת שנוכל לעקוב אחר הפניה.</p>
                   </div>
                   <Button onClick={handleCopyRecipient} variant={copiedRecipient ? "default" : "outline"} className="flex items-center gap-2">
                     {copiedRecipient ? <>
