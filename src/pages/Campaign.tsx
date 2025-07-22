@@ -21,8 +21,8 @@ const Campaign = () => {
   const [copiedRecipient, setCopiedRecipient] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
 
-  const emailSubject = "דחוף: טיפול בפעילות מיסיונרית המפרה את חוק החינוך הממלכתי";
-  const emailRecipient = "hello@example.com";
+  const emailSubject = "לטיפולך כמפקח - פדגוגיה אנטי ציונית בבית ספר מצטיינים ליד״ה";
+  const emailRecipient = "davidnim@education.gov.il ; zealenuedu@gmail.com";
   const emailContent = `**שלום דוד,**
 
 צפיתי בראיון של אמתי שלם על החוויה שלו בשיעורי הספרות בתכנית "עתודה הומניסטית" בבית הספר ליד"ה. מתוך העדות עולה שחדווה (שם בדוי) ניצלה את השיעורים לערעור הזהות הציונית והחלפתה בזהות של "סוכן שינוי" — סוכן שרואה את המציאות לא דרך זהות יהודית או ציונית אלא דרך האבחנה בין "מדכאים" ל"מדוכאים".
