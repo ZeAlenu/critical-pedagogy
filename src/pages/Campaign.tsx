@@ -103,20 +103,16 @@ const Campaign = () => {
             אירוע בית ספר מחוננים ליד״ה
           </h1>
           
-          <div className="max-w-4xl mx-auto text-right text-gray-700 leading-relaxed space-y-4 mb-8">
+          <div className="max-w-4xl mx-auto text-right text-gray-700 leading-relaxed space-y-2 mb-8">
             <p className="text-lg font-semibold">
               "התפיסות [הציוניות] של אבא שלך לא רלוונטיות כי הוא לא עבר תהליך".
             </p>
             <p>
-              כך אמרה מורה בתכנית בשם "עתודה הומניסטית" בבית ספר יוקרתי בירושלים לאמתי שלם בכיתה י"ב.
+              כך אמרה המורה חדווה (שם בדוי) בתכנית בשם "עתודה הומניסטית" בבית ספר יוקרתי בירושלים לאמתי שלם בכיתה י"ב.
             </p>
             <p>מהו אותו "תהליך"?</p>
             <p>
-              במקום אהבת הארץ הם לומדים על ה"נכבה".
-              <br />
-              במקום ציונות הם מוכוונים לחוש בושה.
-              <br />
-              במקום היסטוריה מוחדרת לתלמידים אידאולוגיה צינית.
+              במקום אהבת הארץ הם לומדים על ה"נכבה". במקום ציונות הם מוכוונים לחוש בושה. במקום היסטוריה מוחדרת לתלמידים אידאולוגיה צינית.
             </p>
             <p>
               זה לא קורה רק בבתי ספר יוקרתיים אלא בכל הארץ. המהלך מקודם מלמעלה, כולל במוסדות להכשרת מורים העובדים בצורה הדוקה עם גופים אנטי ציוניים מובהקים כמו אונסק"ו.
@@ -132,10 +128,9 @@ const Campaign = () => {
             </p>
             <p className="font-semibold">הגיע הזמן לדרוש תשובות ולדרוש פיקוח!</p>
             
-            <div className="bg-gradient-to-r from-campaign-blue/10 via-campaign-purple/10 to-campaign-orange/10 p-6 rounded-lg mt-8">
-              <p className="font-bold text-lg mb-2">הגיע הזמן לפתוח עיניים.</p>
-              <p>להחזיר את החינוך לילדינו.</p>
-              <p>להשיב לעצמנו את צדקת דרכנו.</p>
+            <div className="bg-gradient-to-r from-campaign-blue/10 via-campaign-purple/10 to-campaign-orange/10 p-4 rounded-lg mt-6">
+              <p className="font-bold text-lg mb-1">הגיע הזמן לפתוח עיניים.</p>
+              <p>להחזיר את החינוך לילדינו. להשיב לעצמנו את צדקת דרכנו.</p>
               <p className="font-semibold">זה העתיד של הילדים שלנו. של כולנו.</p>
             </div>
           </div>
