@@ -158,12 +158,11 @@ const Campaign = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-mono text-sm">{emailRecipient}</p>
-                  </div>
-                  <div className="bg-blue-50 p-3 rounded-lg text-sm text-right border border-blue-200 mt-2">
-                    <p className="font-semibold">חשוב!</p>
-                    <p>נא להוסיף גם את <span className="font-mono">zealenuedu@gmail.com</span> בעותק (CC) או להעביר את המייל לכתובת זו על מנת שנוכל לעקוב אחר הפניה.</p>
+                  <div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-mono text-sm">{emailRecipient}</p>
+                    </div>
+                    <p className="text-sm mt-2 text-right text-gray-600">דייוד נמרוד סימרוט - מפקח כולל על-יסודי מ"מ מחוז העיר ירושלים (מנח"י)</p>
                   </div>
                   <Button onClick={handleCopyRecipient} variant={copiedRecipient ? "default" : "outline"} className="flex items-center gap-2">
                     {copiedRecipient ? <>
@@ -174,6 +173,10 @@ const Campaign = () => {
                         העתק כתובת
                       </>}
                   </Button>
+                  <div className="bg-blue-50 p-4 rounded-lg text-right border border-blue-200">
+                    <p className="font-mono text-base mb-1">zealenuedu@gmail.com</p>
+                    <p>נא להוסיף את הכתובת בעותק (CC) או להעביר את המייל לכתובת זו על מנת שנוכל לעקוב אחר הפניה.</p>
+                  </div>
                 </CardContent>
               </Card>
 
