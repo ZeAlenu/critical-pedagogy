@@ -185,7 +185,7 @@ const Campaign = () => {
                 </DialogFooter>
               </> : <>
                 <DialogHeader className="text-right">
-                  <DialogTitle className="text-xl">העתק את פרטי המייל</DialogTitle>
+                  <DialogTitle className="text-xl text-right">העתק את פרטי המייל</DialogTitle>
                   <DialogDescription className="text-right">
                     העתק את הפרטים הבאים ושלח את המייל
                   </DialogDescription>
