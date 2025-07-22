@@ -378,22 +378,13 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-red-50 border-r-4 border-red-500 p-6 my-8">
-                    <p className="text-lg font-semibold text-red-800 mb-4">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.</p>
+                  <div className="bg-gray-50 p-6 rounded-lg my-8">
+                    <p className="text-lg font-semibold text-gray-800 mb-4">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.</p>
                     
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <span className="text-red-600 font-bold">❌</span>
-                        <p className="text-gray-700">במקום לגדול עם שורשים – הילדים נעקרים מתרבותם</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-red-600 font-bold">❌</span>
-                        <p className="text-gray-700">במקום להיות גאים במורשתם – הם מגדפים את שכניהם</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-red-600 font-bold">❌</span>
-                        <p className="text-gray-700">במקום לבנות עתיד – הם לומדים לשנוא את ההווה</p>
-                      </div>
+                    <div className="space-y-2 text-gray-700">
+                      <p>• במקום לגדול עם שורשים – הילדים נעקרים מתרבותם</p>
+                      <p>• במקום להיות גאים במורשתם – הם מגדפים את שכניהם</p>
+                      <p>• במקום לבנות עתיד – הם לומדים לשנוא את ההווה</p>
                     </div>
                   </div>
 
