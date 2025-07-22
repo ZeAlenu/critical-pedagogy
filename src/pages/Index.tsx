@@ -374,13 +374,20 @@ const Index = () => {
                       <p className="text-red-700 font-bold">❌ זהות יהודית נמחקת</p>
                     </div>
                     <div className="bg-red-100 p-4 rounded-lg text-center">
-                      <p className="text-red-700 font-bold">❌ אהבת הארץ מוחלפת בשנאה</p>
+                      <p className="text-red-700 font-bold">❌ אהבה וכבוד לבריות מוכחדים</p>
                     </div>
                   </div>
                   
-                  <p className="text-lg text-gray-700">במקום לגדול עם שורשים – הילדים נעקרים מתרבותם. במקום להיות גאים במורשתם – הם שונאים. במקום לבנות עתיד – הם לומדים לשנוא את ההווה.</p>
+                  <p className="text-lg text-gray-700">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.
 
-                  <p className="text-lg text-gray-700">השכלה, שמחת חיים ותום ילדות נגזלים מהם על ידי אידיאולוגים משולחי רסן.</p>
+במקום לגדול עם שורשים – הילדים נעקרים מתרבותם.
+
+במקום להיות גאים במורשתם – הם מגדפים את שכניהם.
+
+במקום לבנות עתיד – הם לומדים לשנוא את ההווה.</p>
+
+                  <p className="text-lg text-gray-700">
+                </p>
 
                   
                   <div className="bg-orange-50 border-2 border-orange-200 p-6 my-8 text-center">
