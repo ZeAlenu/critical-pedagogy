@@ -184,9 +184,9 @@ const Campaign = () => {
                   </Button>
                 </DialogFooter>
               </> : <>
-                <DialogHeader>
+                <DialogHeader className="text-right">
                   <DialogTitle className="text-xl">העתק את פרטי המייל</DialogTitle>
-                  <DialogDescription>
+                  <DialogDescription className="text-right">
                     העתק את הפרטים הבאים ושלח את המייל
                   </DialogDescription>
                 </DialogHeader>
@@ -268,10 +268,10 @@ const Campaign = () => {
                   {/* הודעה על העתקת המייל */}
                   <Card className="border-blue-200 bg-blue-50">
                     <CardHeader>
-                      <CardTitle className="text-lg flex items-center gap-3 text-blue-800">
-                        <Mail className="h-5 w-5 text-blue-600" />
-                        חשוב - העתקת המייל
-                      </CardTitle>
+                       <CardTitle className="text-lg flex items-center gap-3 text-blue-800">
+                         <Mail className="h-5 w-5 text-blue-600" />
+                         חשוב - העברת המייל
+                       </CardTitle>
                     </CardHeader>
                     <CardContent className="text-right space-y-3">
                       <p className="text-blue-700">לאחר שליחת המייל למפקח, נא להעביר את המייל לכתובת:</p>
