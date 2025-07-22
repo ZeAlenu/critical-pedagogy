@@ -404,9 +404,21 @@ const Index = () => {
                   
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg border-2 border-blue-200 text-center my-8">
                     <p className="text-2xl font-bold text-blue-800 mb-4">זה עלינו לקחת אחריות ולתקן</p>
-                    <p className="text-lg text-gray-700">
+                    <p className="text-lg text-gray-700 mb-6">
                       הילדים שלנו – והעתיד של המדינה שלנו – קוראים לנו להציל אותם.
                     </p>
+                    <Button 
+                      onClick={() => {
+                        const target = document.getElementById('registration-form');
+                        if (target) {
+                          target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }} 
+                      className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-8 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-200" 
+                      size="lg"
+                    >
+                      הצטרף למאבק
+                    </Button>
                   </div>
                 </div>
               </CardContent>
