@@ -2,128 +2,92 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Copy, Mail, ArrowRight, CheckCircle } from "lucide-react";
+import { Copy, Mail, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Campaign = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null);
-  const [copiedTemplate, setCopiedTemplate] = useState<number | null>(null);
+  const [copiedSubject, setCopiedSubject] = useState(false);
+  const [copiedContent, setCopiedContent] = useState(false);
+  const [copiedRecipient, setCopiedRecipient] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
 
-  const emailTemplates = [
-    {
-      id: 1,
-      title: "קריאה לתמיכה כללית",
-      subject: "הצטרפו לקמפיין שמשנה את הפנים של הפוליטיקה",
-      content: `שלום רב,
+  const emailSubject = "דחוף: טיפול בפעילות מיסיונרית המפרה את חוק החינוך הממלכתי";
+  const emailRecipient = "hello@example.com";
+  const emailContent = `**שלום דוד,**
 
-אני כותב אליכם מתוך אמונה עמוקה שיש לנו הזדמנות לשנות את המציאות הפוליטית בישראל.
+צפיתי בראיון של אמתי שלם על החוויה שלו בשיעורי הספרות בתכנית "עתודה הומניסטית" בבית הספר ליד"ה. מתוך העדות עולה שחדווה (שם בדוי) ניצלה את השיעורים לערעור הזהות הציונית והחלפתה בזהות של "סוכן שינוי" — סוכן שרואה את המציאות לא דרך זהות יהודית או ציונית אלא דרך האבחנה בין "מדכאים" ל"מדוכאים".
 
-הקמפיין שלנו מתמקד בשלושה עקרונות מרכזיים:
-• שקיפות ואמינות בשירות הציבור
-• מדיניות כלכלית הוגנת לכלל האוכלוסייה  
-• חיזוק הדמוקרטיה הישראלית
+אמתי סיפר בראיון שהמורה חדווה אמרה לו: "התפיסות של אבא שלך לא רלוונטיות כי הוא לא עבר תהליך". נראה כי התהליך המדובר הוא בדיוק אותו תהליך שהיא קידמה בכיתה — טיפוח "זהות סוכן השינוי". חדווה מאמינה שמי שלא זכה ליכולת לראות את כל החברה דרך האבחנה בין מדכא למדוכא — באמת ובתמים אינו ראוי להתייחסות.
 
-אני מזמין אתכם להצטרף אלינו ולקחת חלק פעיל בשינוי:
-- הירשמו לרשימת התפוצה שלנו
-- שתפו את החזון שלנו עם חברים ובני משפחה
-- הגיעו לאירועים ולמפגשים שלנו
+חשיבה ביקורתית, אומץ מוסרי ועומק אינטלקטואלי מתקיימים מבחינתה **אך ורק** עבור מי שאימץ את זהות סוכן השינוי. היא רואה בתכנית כלי ליצירת מי שתפיסתו ראויה להישמע — כלומר, התכנית **ההומניסטית** נועדה לייצר את מי שראוי להיחשב **אדם** במלוא מובן המילה. זוהי פעילות מיסיונרית, והשם המדויק ביותר עבורה הוא כנראה פדגוגיה ביקורתית.
 
-יחד נבנה עתיד טוב יותר לכולנו.
+מעבר לאבסורד הברור בגישה הזו — שלפיה רק מי שרואה את המציאות החברתית כולה דרך עדשה אחת ויחידה נחשב ביקורתי, מוסרי ועמוק — קיימת כאן סתירה יסודית עם המטרה הראשונה של חוק החינוך הממלכתי: **"לחנך אדם להיות אוהב אדם, אוהב עמו ואוהב ארצו, אזרח נאמן למדינת ישראל, המכבד את הוריו ואת משפחתו, את מורשתו, את זהותו התרבותית ואת לשונו";**  
 
-בברכה,
-[השם שלכם]
+אשמח לדעת כיצד אתה מתכוון לטפל בנושא בכל הרמות:  
+• המורה חדווה, אשר נראה שאמונותיה העמוקות ביותר ככל הנראה אינן מאפשרות לה להימנע מפעילות מסיונרית הסותרת את יסודות חוק החינוך הממלכתי.  
+• תכנית העתודה ההומניסטית שבה באה לידי ביטוי מסיונריות זו.  
+• מנהל התיכון שאינו מטפל בבעיה, ואפשר לתכנית העתודה להעניק ציון לא על בסיס הידע בספרות הנדרש לבחינת הבגרות, אלא על בסיס ביטוי של עיקרי האמונה המיסיונרית.
 
-לפרטים נוספים: [קישור לאתר]
-להתנדבות: [מייל יצירת קשר]`
-    },
-    {
-      id: 2,
-      title: "הזמנה לאירוע קמפיין",
-      subject: "הזמנה מיוחדת - מפגש עם המועמד באזורכם",
-      content: `שלום יקר,
+בברכה,`;
 
-אני שמח להזמין אתכם למפגש חשוב עם המועמד שלנו באזורכם.
-
-פרטי האירוע:
-📅 תאריך: [תאריך האירוע]
-🕐 שעה: [שעת האירוע]
-📍 מקום: [מיקום האירוע]
-
-במפגש נדבר על:
-• התוכנית הפוליטית שלנו לשנים הקרובות
-• האתגרים שעומדים בפני האזור
-• איך כל אחד מכם יכול לקחת חלק בשינוי
-
-הכניסה חופשית ומוזמנת כל המשפחה!
-
-מעצם הצורך הלוגיסטי, אנא אשרו הגעה עד [תאריך אישור].
-
-נשמח לראות אתכם שם!
-
-בהוקרה,
-[השם שלכם]
-
-לאישור הגעה: [טלפון/מייל]
-לפרטים נוספים: [אתר/מייל]`
-    },
-    {
-      id: 3,
-      title: "קריאה לפעולה דחופה",
-      subject: "הזמן לפעול הוא עכשיו - צרכו איתנו קשר",
-      content: `חברים יקרים,
-
-אנחנו בנקודת מפנה קריטית. החלטות שיתקבלו בחודשים הקרובים ישפיעו על עתיד המדינה שלנו.
-
-המצב הנוכחי דורש פעולה מיידית:
-⚠️ פערים כלכליים הולכים ומתרחבים
-⚠️ השירותים הציבוריים מתדרדרים
-⚠️ אמון הציבור במוסדות נשחק
-
-יש לנו תוכנית פעולה ברורה לשינוי, אבל אנחנו צריכים את עזרתכם:
-
-פעולות מיידיות שאתם יכולים לעשות:
-1. שתפו את המסר הזה עם 5 חברים
-2. הרשמו לרשימת ההתנדבות שלנו
-3. הגיעו לעצרת התמיכה הגדולה שלנו ב[תאריך]
-
-כל קול חשוב, כל אדם עושה הבדל.
-
-הזמן לפעול הוא עכשיו!
-
-בדחיפות,
-[השם שלכם]
-
-לפעולה מיידית: [טלפון/מייל]
-לעדכונים: [רשימת תפוצה]`
-    }
-  ];
-
-  const handleCopyTemplate = async (templateId: number, content: string, subject: string) => {
-    const fullTemplate = `נושא: ${subject}\n\n${content}`;
-    
+  const handleCopySubject = async () => {
     try {
-      await navigator.clipboard.writeText(fullTemplate);
-      setCopiedTemplate(templateId);
-      setSelectedTemplate(templateId);
-      
-      toast({
-        title: "הועתק בהצלחה!",
-        description: "התבנית הועתקה ללוח. עכשיו תוכלו להדביק אותה במייל",
-      });
-      
-      setTimeout(() => setCopiedTemplate(null), 2000);
+      await navigator.clipboard.writeText(emailSubject);
+      setCopiedSubject(true);
+      toast({ title: "נושא המייל הועתק בהצלחה!" });
+      setTimeout(() => setCopiedSubject(false), 2000);
+      checkAllCopied();
     } catch (err) {
-      toast({
-        title: "שגיאה בהעתקה",
-        description: "אנא נסו שוב או בחרו את הטקסט ידנית",
-        variant: "destructive",
-      });
+      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
     }
   };
 
-  const openGmail = () => {
-    window.open('https://mail.google.com/mail/u/0/#inbox?compose=new', '_blank');
+  const handleCopyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(emailContent);
+      setCopiedContent(true);
+      toast({ title: "תוכן המייל הועתק בהצלחה!" });
+      setTimeout(() => setCopiedContent(false), 2000);
+      checkAllCopied();
+    } catch (err) {
+      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
+    }
+  };
+
+  const handleCopyRecipient = async () => {
+    try {
+      await navigator.clipboard.writeText(emailRecipient);
+      setCopiedRecipient(true);
+      toast({ title: "כתובת הנמען הועתקה בהצלחה!" });
+      setTimeout(() => setCopiedRecipient(false), 2000);
+      checkAllCopied();
+    } catch (err) {
+      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
+    }
+  };
+
+  const checkAllCopied = () => {
+    setTimeout(() => {
+      if (copiedSubject && copiedContent && copiedRecipient) {
+        setShowDialog(true);
+      }
+    }, 100);
+  };
+
+  const handleEmailSent = () => {
+    console.log("success");
+    setShowDialog(false);
+    toast({ title: "תודה! המייל נשלח בהצלחה" });
   };
 
   return (
@@ -139,84 +103,147 @@ const Campaign = () => {
             מרכז המיילים שלנו
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto select-text">
-            בחרו מהתבניות שלמטה, העתיקו למייל שלכם ושלחו לחברים ולמשפחה
+            העתיקו את הרכיבים למייל שלכם ושלחו לכתובת הנדרשת
           </p>
         </motion.div>
 
-        <div className="grid gap-8 max-w-4xl mx-auto">
-          {emailTemplates.map((template, index) => (
-            <motion.div
-              key={template.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 * index }}
-            >
-              <Card className={`hover-lift transition-all duration-300 ${
-                selectedTemplate === template.id ? 'ring-2 ring-campaign-blue shadow-lg' : ''
-              }`}>
-                <CardHeader className="bg-gradient-to-r from-campaign-blue/10 to-campaign-purple/10">
-                  <CardTitle className="text-2xl flex items-center gap-3 select-text">
-                    <Mail className="h-6 w-6 text-campaign-blue" />
-                    {template.title}
-                  </CardTitle>
-                  <p className="text-sm text-gray-600 font-medium select-text">
-                    נושא: {template.subject}
-                  </p>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="bg-gray-50 p-4 rounded-lg mb-6 text-right">
-                    <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed select-text">
-                      {template.content}
-                    </pre>
-                  </div>
-                  
-                  <div className="flex gap-4 justify-center">
-                    <Button
-                      onClick={() => handleCopyTemplate(template.id, template.content, template.subject)}
-                      className="flex items-center gap-2 px-6 py-3"
-                      variant={copiedTemplate === template.id ? "default" : "outline"}
-                    >
-                      {copiedTemplate === template.id ? (
-                        <>
-                          <CheckCircle className="h-4 w-4" />
-                          הועתק!
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="h-4 w-4" />
-                          העתק תבנית
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* יעד השליחה */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-campaign-blue" />
+                  יעד השליחה
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <p className="font-mono text-lg">{emailRecipient}</p>
+                </div>
+                <Button
+                  onClick={handleCopyRecipient}
+                  variant={copiedRecipient ? "default" : "outline"}
+                  className="flex items-center gap-2"
+                >
+                  {copiedRecipient ? (
+                    <>
+                      <CheckCircle className="h-4 w-4" />
+                      הועתק!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4" />
+                      העתק כתובת
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* נושא המייל */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-campaign-purple" />
+                  נושא המייל
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <p className="text-lg">{emailSubject}</p>
+                </div>
+                <Button
+                  onClick={handleCopySubject}
+                  variant={copiedSubject ? "default" : "outline"}
+                  className="flex items-center gap-2"
+                >
+                  {copiedSubject ? (
+                    <>
+                      <CheckCircle className="h-4 w-4" />
+                      הועתק!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4" />
+                      העתק נושא
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* תוכן המייל */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-campaign-orange" />
+                  תוכן המייל
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Textarea
+                  value={emailContent}
+                  readOnly
+                  className="min-h-[400px] bg-gray-50 text-right"
+                />
+                <Button
+                  onClick={handleCopyContent}
+                  variant={copiedContent ? "default" : "outline"}
+                  className="flex items-center gap-2"
+                >
+                  {copiedContent ? (
+                    <>
+                      <CheckCircle className="h-4 w-4" />
+                      הועתק!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4" />
+                      העתק תוכן
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <Card className="max-w-2xl mx-auto glass-effect">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4 select-text">מוכנים לשלוח?</h3>
-              <p className="text-gray-600 mb-6 select-text">
-                לאחר שהעתקתם את התבנית, פתחו את Gmail ושלחו את המייל לרשימת הקשרים שלכם
-              </p>
-              <Button 
-                onClick={openGmail}
-                className="gradient-bg hover:opacity-90 px-8 py-4 text-lg font-semibold"
-              >
-                פתח Gmail
-                <ArrowRight className="mr-2 h-5 w-5" />
+        {/* Dialog */}
+        <Dialog open={showDialog} onOpenChange={setShowDialog}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>שליחת המייל</DialogTitle>
+              <DialogDescription>
+                שלחת את המייל לכתובת hello@example.com?
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="gap-2">
+              <Button variant="outline" onClick={() => setShowDialog(false)}>
+                עדיין לא
               </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
+              <Button onClick={handleEmailSent}>
+                שלחתי
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
