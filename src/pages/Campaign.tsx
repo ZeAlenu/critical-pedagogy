@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,21 +5,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { Copy, Mail, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 const Campaign = () => {
   const [copiedSubject, setCopiedSubject] = useState(false);
   const [copiedContent, setCopiedContent] = useState(false);
   const [copiedRecipient, setCopiedRecipient] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
-
   const emailSubject = "לטיפולך כמפקח - פדגוגיה אנטי ציונית בבית ספר מצטיינים ליד״ה";
   const emailRecipient = "davidnim@education.gov.il ; zealenuedu@gmail.com";
   const emailContent = `**שלום דוד,**
@@ -39,43 +29,54 @@ const Campaign = () => {
 • מנהל התיכון שאינו מטפל בבעיה, ואפשר לתכנית העתודה להעניק ציון לא על בסיס הידע בספרות הנדרש לבחינת הבגרות, אלא על בסיס ביטוי של עיקרי האמונה המיסיונרית.
 
 בברכה,`;
-
   const handleCopySubject = async () => {
     try {
       await navigator.clipboard.writeText(emailSubject);
       setCopiedSubject(true);
-      toast({ title: "נושא המייל הועתק בהצלחה!" });
+      toast({
+        title: "נושא המייל הועתק בהצלחה!"
+      });
       setTimeout(() => setCopiedSubject(false), 2000);
       checkAllCopied();
     } catch (err) {
-      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
+      toast({
+        title: "שגיאה בהעתקה",
+        variant: "destructive"
+      });
     }
   };
-
   const handleCopyContent = async () => {
     try {
       await navigator.clipboard.writeText(emailContent);
       setCopiedContent(true);
-      toast({ title: "תוכן המייל הועתק בהצלחה!" });
+      toast({
+        title: "תוכן המייל הועתק בהצלחה!"
+      });
       setTimeout(() => setCopiedContent(false), 2000);
       checkAllCopied();
     } catch (err) {
-      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
+      toast({
+        title: "שגיאה בהעתקה",
+        variant: "destructive"
+      });
     }
   };
-
   const handleCopyRecipient = async () => {
     try {
       await navigator.clipboard.writeText(emailRecipient);
       setCopiedRecipient(true);
-      toast({ title: "כתובת הנמען הועתקה בהצלחה!" });
+      toast({
+        title: "כתובת הנמען הועתקה בהצלחה!"
+      });
       setTimeout(() => setCopiedRecipient(false), 2000);
       checkAllCopied();
     } catch (err) {
-      toast({ title: "שגיאה בהעתקה", variant: "destructive" });
+      toast({
+        title: "שגיאה בהעתקה",
+        variant: "destructive"
+      });
     }
   };
-
   const checkAllCopied = () => {
     setTimeout(() => {
       if (copiedSubject && copiedContent && copiedRecipient) {
@@ -83,22 +84,24 @@ const Campaign = () => {
       }
     }, 100);
   };
-
   const handleEmailSent = () => {
     console.log("success");
     setShowDialog(false);
-    toast({ title: "תודה! המייל נשלח בהצלחה" });
+    toast({
+      title: "תודה! המייל נשלח בהצלחה"
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 py-8">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 py-8">
       <div className="container mx-auto px-4">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.8
+      }} className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6 select-text">
             אירוע בית ספר מחוננים ליד״ה
           </h1>
@@ -114,12 +117,8 @@ const Campaign = () => {
             <p>
               במקום אהבת הארץ הם לומדים על ה"נכבה". במקום ציונות הם מוכוונים לחוש בושה. במקום היסטוריה מוחדרת לתלמידים אידאולוגיה צינית.
             </p>
-            <p>
-              זה לא קורה רק בבתי ספר יוקרתיים אלא בכל הארץ. המהלך מקודם מלמעלה, כולל במוסדות להכשרת מורים העובדים בצורה הדוקה עם גופים אנטי ציוניים מובהקים כמו אונסק"ו.
-            </p>
-            <p>
-              לכן ההישגים הלימודיים של הילדים שלנו בירידה, תכני הזהות כמו תנ"ך ומולדת הולכים ונמוגים. והחלל הזה משמש להפיכת התלמיד ל"סוכן שינוי".
-            </p>
+            <p>זה לא קורה רק בבתי ספר יוקרתיים אלא בכל הארץ. המהלך מקודם מלמעלה, כולל במוסדות להכשרת מורים העובדים בצורה הדוקה עם גופים אנטי ציוניים מובהקים כמו אונסק"ו. לכן ההישגים הלימודיים של הילדים שלנו בירידה, תכני הזהות כמו תנ"ך ומולדת הולכים ונמוגים. והחלל הזה משמש להפיכת התלמיד ל"סוכן שינוי".</p>
+            
             <p>
               טכניקת ערעור הזהות הקיימת והחלפתה בזהות "סוכן השינוי" נקראת: "פדגוגיה ביקורתית". זו אינה חשיבה ביקורתית אלא שנאת זהות.
             </p>
@@ -135,11 +134,7 @@ const Campaign = () => {
             </div>
           </div>
 
-          <Button 
-            onClick={() => setShowDialog(true)}
-            size="lg"
-            className="bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange text-white font-bold px-8 py-4 text-lg"
-          >
+          <Button onClick={() => setShowDialog(true)} size="lg" className="bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange text-white font-bold px-8 py-4 text-lg">
             שלח מייל למפקח
           </Button>
         </motion.div>
@@ -168,22 +163,14 @@ const Campaign = () => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="font-mono text-sm">{emailRecipient}</p>
                   </div>
-                  <Button
-                    onClick={handleCopyRecipient}
-                    variant={copiedRecipient ? "default" : "outline"}
-                    className="flex items-center gap-2"
-                  >
-                    {copiedRecipient ? (
-                      <>
+                  <Button onClick={handleCopyRecipient} variant={copiedRecipient ? "default" : "outline"} className="flex items-center gap-2">
+                    {copiedRecipient ? <>
                         <CheckCircle className="h-4 w-4" />
                         הועתק!
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         <Copy className="h-4 w-4" />
                         העתק כתובת
-                      </>
-                    )}
+                      </>}
                   </Button>
                 </CardContent>
               </Card>
@@ -200,22 +187,14 @@ const Campaign = () => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm">{emailSubject}</p>
                   </div>
-                  <Button
-                    onClick={handleCopySubject}
-                    variant={copiedSubject ? "default" : "outline"}
-                    className="flex items-center gap-2"
-                  >
-                    {copiedSubject ? (
-                      <>
+                  <Button onClick={handleCopySubject} variant={copiedSubject ? "default" : "outline"} className="flex items-center gap-2">
+                    {copiedSubject ? <>
                         <CheckCircle className="h-4 w-4" />
                         הועתק!
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         <Copy className="h-4 w-4" />
                         העתק נושא
-                      </>
-                    )}
+                      </>}
                   </Button>
                 </CardContent>
               </Card>
@@ -229,27 +208,15 @@ const Campaign = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <Textarea
-                    value={emailContent}
-                    readOnly
-                    className="min-h-[300px] bg-gray-50 text-right text-sm"
-                  />
-                  <Button
-                    onClick={handleCopyContent}
-                    variant={copiedContent ? "default" : "outline"}
-                    className="flex items-center gap-2"
-                  >
-                    {copiedContent ? (
-                      <>
+                  <Textarea value={emailContent} readOnly className="min-h-[300px] bg-gray-50 text-right text-sm" />
+                  <Button onClick={handleCopyContent} variant={copiedContent ? "default" : "outline"} className="flex items-center gap-2">
+                    {copiedContent ? <>
                         <CheckCircle className="h-4 w-4" />
                         הועתק!
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         <Copy className="h-4 w-4" />
                         העתק תוכן
-                      </>
-                    )}
+                      </>}
                   </Button>
                 </CardContent>
               </Card>
@@ -263,8 +230,6 @@ const Campaign = () => {
           </DialogContent>
         </Dialog>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Campaign;
