@@ -151,9 +151,9 @@ const Campaign = () => {
         <Dialog open={showDialog} onOpenChange={setShowDialog}>
           <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
             {dialogStep === 1 ? <>
-                <DialogHeader>
-                  <DialogTitle className="text-xl">שליחת מייל למפקח</DialogTitle>
-                  <DialogDescription>
+                <DialogHeader className="text-right">
+                  <DialogTitle className="text-xl text-right">שליחת מייל למפקח</DialogTitle>
+                  <DialogDescription className="text-right">
                     מטרת המייל היא ליצור מעורבות ולהראות שהנושא לא יכול לעבור על סדר היום
                   </DialogDescription>
                 </DialogHeader>
