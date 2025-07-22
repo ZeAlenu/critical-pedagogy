@@ -494,7 +494,6 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h3 className="text-lg font-medium text-gray-700 mb-6">צור קשר</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-gray-600">
                 <Mail className="w-4 h-4" />
