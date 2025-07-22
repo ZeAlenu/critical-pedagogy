@@ -413,6 +413,27 @@ const Index = () => {
             </Card>
           </motion.div>
 
+          {/* Join Campaign Button */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.9 }} 
+            className="text-center mb-16"
+          >
+            <Button 
+              onClick={() => {
+                const target = document.getElementById('registration-form');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+              }} 
+              className="bg-gradient-to-r from-campaign-blue to-campaign-purple text-white px-12 py-4 text-xl font-bold hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-xl" 
+              size="lg"
+            >
+              הצטרף למאבק
+            </Button>
+          </motion.div>
+
           {/* Video Section */}
           <VideoSection />
 
