@@ -31,7 +31,7 @@ const VideoSection = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">עדויות מהשטח</h2>
         <p className="text-xl text-gray-600">
-          צפו בסרטונים שחושפים את האמת על הפדגוגיה הביקורתית הרעילה
+          צפו בסרטונים שחושפים את האמת על הפדגוגיה הביקורתית
         </p>
       </div>
       
