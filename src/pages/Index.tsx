@@ -166,6 +166,30 @@ const Index = () => {
             </div>
           </motion.div>
 
+          {/* Single Video Section after first "הצטרף למאבק" */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-16"
+          >
+            <Card className="hover-lift overflow-hidden max-w-4xl mx-auto">
+              <CardContent className="p-0">
+                <div className="relative aspect-video bg-black">
+                  <iframe
+                    src="https://www.youtube.com/embed/ULV0ENmMQ-k?rel=0&modestbranding=1"
+                    title="מה קורה במערכת החינוך?"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    className="w-full h-full border-0"
+                    style={{ pointerEvents: 'auto' }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
           {/* Stats Cards */}
           <motion.div initial={{
           opacity: 0,
