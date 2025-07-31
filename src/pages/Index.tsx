@@ -107,7 +107,7 @@ const Index = () => {
           email: email,
           phone: phone,
           timestamp: new Date().toISOString(),
-          source: 'פדגוגיה ביקורתית רעילה'
+          source: 'פדגוגיה ביקורתית מרעילה'
         })
       });
       if (response.ok) {
@@ -148,7 +148,7 @@ const Index = () => {
           duration: 0.8
         }} className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-campaign-blue via-campaign-purple to-campaign-orange bg-clip-text text-transparent mb-6">
-              פדגוגיה ביקורתית רעילה
+              פדגוגיה ביקורתית מרעילה
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed" dir="rtl">שמים סוף לעירעור הזהות במערכת החינוך. חוזרים לחינוך ציוני!</p>
             <div className="mt-8 pointer-events-none">
