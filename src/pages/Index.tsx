@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Phone, Play, Users, Target, Megaphone, Shield, Star, AlertTriangle, UserX, Brain, MessageSquareX, ShieldX, SquareLibrary, Library } from "lucide-react";
 import VideoSection from "@/components/VideoSection";
@@ -173,21 +174,39 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-16"
           >
-            <Card className="hover-lift overflow-hidden max-w-4xl mx-auto">
-              <CardContent className="p-0">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Card className="hover-lift overflow-hidden max-w-xl mx-auto cursor-pointer transition-transform hover:scale-105">
+                  <CardContent className="p-0 relative">
+                    <div className="relative aspect-video bg-black">
+                      <iframe
+                        src="https://www.youtube.com/embed/ULV0ENmMQ-k?rel=0&modestbranding=1"
+                        title="מה קורה במערכת החינוך?"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                        className="w-full h-full border-0"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors">
+                        <Play className="w-16 h-16 text-white/80" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-6xl w-[90vw] p-0">
                 <div className="relative aspect-video bg-black">
                   <iframe
-                    src="https://www.youtube.com/embed/ULV0ENmMQ-k?rel=0&modestbranding=1"
+                    src="https://www.youtube.com/embed/ULV0ENmMQ-k?rel=0&modestbranding=1&autoplay=1"
                     title="מה קורה במערכת החינוך?"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    loading="lazy"
                     className="w-full h-full border-0"
-                    style={{ pointerEvents: 'auto' }}
                   />
                 </div>
-              </CardContent>
-            </Card>
+              </DialogContent>
+            </Dialog>
           </motion.div>
 
           {/* Stats Cards */}
